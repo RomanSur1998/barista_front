@@ -1,0 +1,40 @@
+.title {
+  color: rgb(42, 52, 64);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 120%;
+  text-align: left;
+}
+.headerContainer {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 24px;
+  background-color: #fff;
+}
+
+.input input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: rgb(53, 83, 107);
+  font-size: 18px;
+  font-weight: 500;
+}
+.createButtnon {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.headerSelect {
+  width: 720px;
+  background-color: #ebeff2;
+  height: 52px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

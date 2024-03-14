@@ -1,0 +1,14 @@
+<svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip67_8897">
+			<rect id="mdi:account-outline" width="24.000000" height="24.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="mdi:account-outline" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip67_8897)">
+		<path id="Vector" d="M12 4C13.06 4 14.07 4.42 14.82 5.17C15.57 5.92 16 6.93 16 8C16 9.06 15.57 10.07 14.82 10.82C14.07 11.57 13.06 12 12 12C10.93 12 9.92 11.57 9.17 10.82C8.42 10.07 8 9.06 8 8C8 6.93 8.42 5.92 9.17 5.17C9.92 4.42 10.93 4 12 4ZM12 6C11.46 6 10.96 6.21 10.58 6.58C10.21 6.96 10 7.46 10 8C10 8.53 10.21 9.03 10.58 9.41C10.96 9.78 11.46 10 12 10C12.53 10 13.03 9.78 13.41 9.41C13.78 9.03 14 8.53 14 8C14 7.46 13.78 6.96 13.41 6.58C13.03 6.21 12.53 6 12 6ZM12 13C14.66 13 20 14.33 20 17L20 20L4 20L4 17C4 14.33 9.33 13 12 13ZM12 14.9C9.03 14.9 5.89 16.36 5.89 17L5.89 18.1L18.1 18.1L18.1 17C18.1 16.36 14.97 14.9 12 14.9Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

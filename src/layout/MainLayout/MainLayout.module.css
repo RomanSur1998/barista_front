@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgb(235, 239, 242);
+}
+.postionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 55px; */
+  background-color: #ebeff2;
+  width: 100%;
+  height: 95%;
+  margin-inline: 24px;
+  border-radius: 20px;
+  display: flex;
+  padding: 32px;
+  position: relative;
+}
+.myPagination {
+  position: absolute;
+  bottom: 34px;
+}
