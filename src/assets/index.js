@@ -6,6 +6,7 @@ import menu_icon from "./icons/menu_icon.svg";
 import profile_icon from "./icons/profile_icon.svg";
 import exit_icon from "./icons/exit_icon.svg";
 import notification_icon from "./icons/notification_icon.svg";
+import close_icon from "./icons/close_icon.svg";
 
 export const images = {
   auth_image: auth_image,
@@ -19,4 +20,5 @@ export const icons = {
   profile_icon: profile_icon,
   exit_icon: exit_icon,
   notification_icon: notification_icon,
+  close_icon: close_icon,
 };
