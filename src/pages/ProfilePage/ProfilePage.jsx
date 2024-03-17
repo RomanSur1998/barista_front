@@ -1,11 +1,14 @@
 import React from "react";
 import MainRoutes from "../../routes/MainRoutes";
 import MainLayout from "../../layout/MainLayout/MainLayout";
+import PersonalData from "../../components/PersonalData/PersonalData";
 
 const ProfilePage = () => {
   return (
     <MainLayout>
-      <div>ProfilePage</div>
+      <>
+        <PersonalData />
+      </>
     </MainLayout>
   );
 };

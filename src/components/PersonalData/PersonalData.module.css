@@ -1,0 +1,36 @@
+.container {
+  width: 705px;
+  height: 320px;
+  background-color: #fefefe;
+  border-radius: 20px;
+  padding: 32px;
+}
+.data_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 24px;
+}
+.item {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 8px;
+}
+.span {
+  color: #5b7e9a;
+  font-size: 16px;
+  font-weight: 400;
+}
+.text_block {
+  width: 305px;
+  height: 50px;
+  background-color: #ebeff2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  color: #2a3440;
+  font-size: 18px;
+  font-weight: 400;
+}
