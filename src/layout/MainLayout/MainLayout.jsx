@@ -10,10 +10,10 @@ const MainLayout = ({ children }) => {
       <main>
         <Header />
         <section className={styles.postionContainer}>
-          <section className={styles.tableContainer}>
-            {children}
-            <div className={styles.myPagination}></div>
-          </section>
+          {/* <section className={styles.tableContainer}> */}
+          {children}
+          {/* <div className={styles.myPagination}></div> */}
+          {/* </section> */}
         </section>
       </main>
     </div>
