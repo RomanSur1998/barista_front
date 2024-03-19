@@ -8,6 +8,5 @@
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
-  margin-left: 32px;
   gap: 32px 24px;
 }
