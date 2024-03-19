@@ -45,11 +45,7 @@ const MenuPage = () => {
       <section className={classnames(styles.container)}>
         <div className={styles.menuItem_container}>
           {menuItem.map((menuItem) => (
-            <MenuCard
-              key={menuItem.id}
-              menuItem={menuItem}
-              // onClick={() => setModalActive(true)}
-            />
+            <MenuCard key={menuItem.id} menuItem={menuItem} />
           ))}
         </div>
       </section>

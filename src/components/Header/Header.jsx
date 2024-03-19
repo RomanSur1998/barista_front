@@ -5,7 +5,6 @@ import { icons } from "../../assets";
 
 const Header = () => {
   const [selectedOrderType, setSelectedOrderType] = useState("takeaway");
-
   const handleOrderTypeSelection = (ordertype) => {
     setSelectedOrderType(ordertype);
   };
