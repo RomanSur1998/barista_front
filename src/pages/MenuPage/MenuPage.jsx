@@ -4,6 +4,7 @@ import MainLayout from "../../layout/MainLayout/MainLayout";
 import classnames from "classnames";
 import MenuCard from "../../components/MenuCard/MenuCard";
 import { images } from "../../assets";
+import MenuTypeItems from "../../components/MenuTypeItems/MenuTypeItems";
 
 const MenuPage = () => {
   const menuItem = [
@@ -43,6 +44,7 @@ const MenuPage = () => {
   return (
     <MainLayout>
       <section className={classnames(styles.container)}>
+        <MenuTypeItems />
         <div className={styles.menuItem_container}>
           {menuItem.map((menuItem) => (
             <MenuCard key={menuItem.id} menuItem={menuItem} />

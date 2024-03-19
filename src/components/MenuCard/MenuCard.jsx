@@ -26,10 +26,7 @@ const MenuCard = ({ menuItem }) => {
 
   return (
     <>
-      <div
-        className={classNames(styles.menucard)}
-        // onClick={() => setModalActive(true)}
-      >
+      <div className={classNames(styles.menucard)}>
         <div
           className={classNames(styles.menucard__content, [
             !contentVisible && styles.menucardContent_hidden,
