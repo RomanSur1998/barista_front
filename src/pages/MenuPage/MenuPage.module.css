@@ -3,3 +3,10 @@
   /* background-color: #2377b7; */
   /* height: 100vh; */
 }
+
+.menuItem_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 32px;
+  gap: 32px 24px;
+}

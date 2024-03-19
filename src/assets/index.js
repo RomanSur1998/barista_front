@@ -7,9 +7,11 @@ import profile_icon from "./icons/profile_icon.svg";
 import exit_icon from "./icons/exit_icon.svg";
 import notification_icon from "./icons/notification_icon.svg";
 import close_icon from "./icons/close_icon.svg";
+import coffeeImg from "./images/coffeeImg.svg";
 
 export const images = {
   auth_image: auth_image,
+  coffeeImg: coffeeImg,
 };
 
 export const icons = {
