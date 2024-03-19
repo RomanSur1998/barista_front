@@ -7,9 +7,15 @@ import profile_icon from "./icons/profile_icon.svg";
 import exit_icon from "./icons/exit_icon.svg";
 import notification_icon from "./icons/notification_icon.svg";
 import close_icon from "./icons/close_icon.svg";
+import coffeeImg from "./images/coffeeImg.svg";
+import coffeeBobs_icon from "./icons/coffeeBobs_icon.svg";
+import bakery_icon from "./icons/bakery_icon.svg";
+import dessert_icon from "./icons/dessert_icon.svg";
+import cocktail_icon from "./icons/cocktail_icon.svg";
 
 export const images = {
   auth_image: auth_image,
+  coffeeImg: coffeeImg,
 };
 
 export const icons = {
@@ -21,4 +27,8 @@ export const icons = {
   exit_icon: exit_icon,
   notification_icon: notification_icon,
   close_icon: close_icon,
+  coffeeBobs_icon: coffeeBobs_icon,
+  bakery_icon: bakery_icon,
+  dessert_icon: dessert_icon,
+  cocktail_icon: cocktail_icon,
 };
