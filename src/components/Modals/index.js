@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LogoutModal from "./LogoutModal/LogoutModal";
 import AboutItemModal from "./AboutItemModal/AboutItemModal";
 import AdditivesModal from "./AdditivesModal/AdditivesModal";
+import RightSideBar from "../RightSideBar/RightSideBar";
 
 const Modals = () => {
   const { isModalOpen, currentModal, modalProps } = useSelector(
@@ -13,6 +14,7 @@ const Modals = () => {
     LogoutModal: LogoutModal,
     AboutItemModal: AboutItemModal,
     AdditivesModal: AdditivesModal,
+    RightSideBar: RightSideBar,
   };
 
   // const ModalComponent = currentModal ? ModalsMap[currentModal] : null;

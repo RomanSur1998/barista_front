@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import classnames from "classnames";
 import MenuCard from "../../components/MenuCard/MenuCard";
@@ -9,6 +9,12 @@ import { useDispatch } from "react-redux";
 import styles from "./MenuPage.module.css";
 
 const MenuPage = () => {
+  const dispatch = useDispatch();
+
+  const handleShowSidebar = () => {
+    dispatch(showModal({ modalType: "RightSideBar" }));
+  };
+
   const menuItem = [
     {
       id: 1,
@@ -53,7 +59,7 @@ const MenuPage = () => {
           ))}
         </div>
 
-        <div className={styles.orderCheck}>
+        <div className={styles.orderCheck} onClick={handleShowSidebar}>
           <p className={styles.orderCheck__type}>Заказ на вынос</p>
           <p className={styles.orderCheck__price}>0 сом</p>
         </div>

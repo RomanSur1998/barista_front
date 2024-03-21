@@ -13,11 +13,14 @@ import bakery_icon from "./icons/bakery_icon.svg";
 import dessert_icon from "./icons/dessert_icon.svg";
 import cocktail_icon from "./icons/cocktail_icon.svg";
 import cheesecake from "./images/cheesecake.png";
+import add_item from "./images/add_item.png";
+import closeWhite_icon from "./icons/closeWhite_icon.svg";
 
 export const images = {
   auth_image: auth_image,
   coffeeImg: coffeeImg,
   cheesecake: cheesecake,
+  add_item: add_item,
 };
 
 export const icons = {
@@ -33,4 +36,5 @@ export const icons = {
   bakery_icon: bakery_icon,
   dessert_icon: dessert_icon,
   cocktail_icon: cocktail_icon,
+  closeWhite_icon: closeWhite_icon,
 };
