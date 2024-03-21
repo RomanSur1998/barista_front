@@ -1,7 +1,7 @@
 import React from "react";
 import { icons, images } from "../../../assets";
 import { useDispatch } from "react-redux";
-import { hideModal } from "../../../redux/slices/modalSlice";
+import { hideModal, showModal } from "../../../redux/slices/modalSlice";
 import styles from "./AboutItemModal.module.css";
 
 const AboutItemModal = () => {
@@ -9,6 +9,10 @@ const AboutItemModal = () => {
 
   const handleModalClose = () => {
     dispatch(hideModal());
+  };
+
+  const showAdditivesModal = () => {
+    dispatch(showModal({ modalType: "AdditivesModal" }));
   };
 
   return (
@@ -41,7 +45,9 @@ const AboutItemModal = () => {
               </ul>
             </div>
 
-            <button className={styles.modal__btn}>Добавить</button>
+            <button className={styles.modal__btn} onClick={showAdditivesModal}>
+              Добавить
+            </button>
           </div>
         </div>
       </div>

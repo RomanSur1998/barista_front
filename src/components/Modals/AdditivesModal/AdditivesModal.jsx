@@ -1,10 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./AdditivesModal.module.css";
 import { hideModal } from "../../../redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
+import { icons } from "../../../assets";
+import classnames from "classnames";
 
 const AdditivesModal = () => {
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
   const handleModalClose = () => {
     dispatch(hideModal());
   };
@@ -26,7 +30,7 @@ const AdditivesModal = () => {
           <div className={styles.additivesModal_header}>
             <h3>Выберите опции</h3>
             <img
-              src={images.closeIcon}
+              src={icons.close_icon}
               className={styles.logoutModal_close}
               alt="Logout"
               onClick={handleModalClose}
@@ -73,7 +77,7 @@ const AdditivesModal = () => {
           </div>
 
           <p
-            className={classNames(
+            className={classnames(
               styles.additives_title,
               styles.additives_sirop
             )}

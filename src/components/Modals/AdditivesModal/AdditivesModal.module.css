@@ -17,30 +17,36 @@
 }
 
 .additivesModal {
-  width: 60rem;
-  height: 55.2rem;
-  padding: 3rem;
+  width: 600px;
+  height: 552px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 30px;
 }
 
 .additivesModal_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3.8rem;
+  margin-bottom: 38px;
 }
 
 .additivesModal h3 {
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: 24px;
+}
+
+.logoutModal_close {
+  cursor: pointer;
 }
 
 .additives {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25.2rem;
-  height: 3.9rem;
-  gap: 1.2rem;
+  width: 252px;
+  height: 39px;
+  gap: 12px;
   /* border-bottom: 1px solid #cccccc; */
 }
 
@@ -48,12 +54,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 3.2rem;
+  gap: 32px;
+  /* border-radius: 30px; */
 }
 
 .additives_radioBtn {
-  width: 2.7rem;
-  height: 2.7rem;
+  width: 22px;
+  height: 27px;
   border-radius: 50%;
   border: 1px solid #ff8b5b;
   display: flex;
@@ -83,22 +90,22 @@
 .additives_line {
   width: 100%;
   display: flex;
-  gap: 1.2rem;
+  gap: 12px;
   border-bottom: 1px solid #cccccc;
 }
 
 .additives_title {
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 20px;
   color: #5b7e9a;
-  padding-bottom: 1.5rem;
+  padding-bottom: 15px;
 }
 
 .additives_ingredient,
 .additives_price {
   font-weight: 400;
-  font-size: 2rem;
-  color: var(--COLOR-BLACK);
+  font-size: 20px;
+  color: #2a3440;
 }
 
 .additives_price {
@@ -106,49 +113,53 @@
 }
 
 .additives_sirop {
-  margin-top: 4rem;
+  margin-top: 40px;
 }
 
 .additives_footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 8rem;
-  gap: 1.6rem;
+  margin-top: 80px;
+  gap: 16px;
 }
 
 .counter {
-  width: 12.8rem;
-  height: 5.6rem;
+  width: 128px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
-  background-color: var(--COLOR-PRIMARY);
+  gap: 16px;
+  background-color: #f47356;
   color: #fff;
   font-weight: 600;
-  font-size: 2rem;
-  border-radius: 10rem;
+  font-size: 20px;
+  border-radius: 100px;
+}
+
+.counter__title {
+  color: #fff;
 }
 
 .counter__remove,
 .counter__add {
   border: none;
-  background-color: var(--COLOR-PRIMARY);
+  background-color: #f47356;
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .footer_addBtn {
-  width: 39.2rem;
-  height: 5.6rem;
+  width: 392px;
+  height: 56px;
   font-weight: 600;
-  font-size: 1.6rem;
-  background-color: var(--COLOR-PRIMARY);
+  font-size: 16px;
+  background-color: #f47356;
   border: none;
   color: #fff;
-  border-radius: 10rem;
+  border-radius: 100px;
   cursor: pointer;
 }
