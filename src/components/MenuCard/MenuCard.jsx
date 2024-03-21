@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-import styles from "./MenuCard.module.css";
+
 import { images } from "../../assets/";
 import classNames from "classnames";
+import { showModal } from "../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
+import styles from "./MenuCard.module.css";
 
 const MenuCard = ({ menuItem }) => {
   const [showBtns, setShowBtns] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [contentVisible, setContentVisible] = useState(true);
-  // const [modalActive, setModalActive] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleShowModal = () => {
+    dispatch(showModal({ modalType: "AboutItemModal" }));
+  };
 
   const handleBtnClick = () => {
     setShowBtns(true);
@@ -26,7 +34,7 @@ const MenuCard = ({ menuItem }) => {
 
   return (
     <>
-      <div className={classNames(styles.menucard)}>
+      <div className={classNames(styles.menucard)} onClick={handleShowModal}>
         <div
           className={classNames(styles.menucard__content, [
             !contentVisible && styles.menucardContent_hidden,

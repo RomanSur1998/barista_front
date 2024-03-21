@@ -12,10 +12,12 @@ import coffeeBobs_icon from "./icons/coffeeBobs_icon.svg";
 import bakery_icon from "./icons/bakery_icon.svg";
 import dessert_icon from "./icons/dessert_icon.svg";
 import cocktail_icon from "./icons/cocktail_icon.svg";
+import cheesecake from "./images/cheesecake.png";
 
 export const images = {
   auth_image: auth_image,
   coffeeImg: coffeeImg,
+  cheesecake: cheesecake,
 };
 
 export const icons = {

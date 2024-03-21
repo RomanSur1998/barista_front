@@ -1,10 +1,12 @@
 import React from "react";
-import styles from "./MenuPage.module.css";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import classnames from "classnames";
 import MenuCard from "../../components/MenuCard/MenuCard";
 import { images } from "../../assets";
 import MenuTypeItems from "../../components/MenuTypeItems/MenuTypeItems";
+import { showModal } from "../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
+import styles from "./MenuPage.module.css";
 
 const MenuPage = () => {
   const menuItem = [
