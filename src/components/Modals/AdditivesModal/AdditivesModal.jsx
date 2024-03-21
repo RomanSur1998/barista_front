@@ -49,7 +49,6 @@ const AdditivesModal = () => {
                 <p className={styles.additives_ingredient}>коровье</p>
                 <p className={styles.additives_price}>+0 c</p>
               </div>
-              {/* <hr className={styles.additives__line} /> */}
             </div>
             <div className={styles.additives}>
               <label className={styles.additives_radioBtn}>
@@ -61,7 +60,6 @@ const AdditivesModal = () => {
                 <p className={styles.additives_ingredient}>овсяное</p>
                 <p className={styles.additives_price}>+0 c</p>
               </div>
-              {/* <hr className={styles.additives__line} /> */}
             </div>
             <div className={styles.additives}>
               <label className={styles.additives_radioBtn}>
@@ -72,7 +70,6 @@ const AdditivesModal = () => {
                 <p className={styles.additives_ingredient}>соевое</p>
                 <p className={styles.additives_price}>+0 c</p>
               </div>
-              {/* <hr className={styles.additives__line} /> */}
             </div>
           </div>
 
@@ -86,14 +83,14 @@ const AdditivesModal = () => {
           </p>
           <div className={styles.additives_wrapper}>
             <div className={styles.additives}>
-              <input type="checkbox" />
+              <input type="checkbox" name="syrop" className={styles.checkbox} />
               <div className={styles.additives_line}>
                 <p className={styles.additives_ingredient}>Клубничный</p>
                 <p className={styles.additives_price}>+30 c</p>
               </div>
             </div>
             <div className={styles.additives}>
-              <input type="checkbox" />
+              <input type="checkbox" name="syrop" className={styles.checkbox} />
               <div className={styles.additives_line}>
                 <p className={styles.additives_ingredient}>Карамельный</p>
                 <p className={styles.additives_price}>+50 c</p>

@@ -52,6 +52,11 @@ const MenuPage = () => {
             <MenuCard key={menuItem.id} menuItem={menuItem} />
           ))}
         </div>
+
+        <div className={styles.orderCheck}>
+          <p className={styles.orderCheck__type}>Заказ на вынос</p>
+          <p className={styles.orderCheck__price}>0 сом</p>
+        </div>
       </section>
     </MainLayout>
   );
