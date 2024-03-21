@@ -1,0 +1,154 @@
+.modal,
+.modal__overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__overlay {
+  background: #25252533;
+}
+
+.additivesModal {
+  width: 60rem;
+  height: 55.2rem;
+  padding: 3rem;
+}
+
+.additivesModal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.8rem;
+}
+
+.additivesModal h3 {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.additives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25.2rem;
+  height: 3.9rem;
+  gap: 1.2rem;
+  /* border-bottom: 1px solid #cccccc; */
+}
+
+.additives_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.additives_radioBtn {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  border: 1px solid #ff8b5b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkmark {
+  width: 11px;
+  height: 11px;
+  background-color: #ff8b5b;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.additives_radioBtn input {
+  display: none;
+}
+
+.additives_radioBtn input:checked + .checkmark {
+  opacity: 1;
+}
+
+.additives_line {
+  width: 100%;
+  display: flex;
+  gap: 1.2rem;
+  border-bottom: 1px solid #cccccc;
+}
+
+.additives_title {
+  font-weight: 400;
+  font-size: 2rem;
+  color: #5b7e9a;
+  padding-bottom: 1.5rem;
+}
+
+.additives_ingredient,
+.additives_price {
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--COLOR-BLACK);
+}
+
+.additives_price {
+  color: #5b7e9a;
+}
+
+.additives_sirop {
+  margin-top: 4rem;
+}
+
+.additives_footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  gap: 1.6rem;
+}
+
+.counter {
+  width: 12.8rem;
+  height: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  border-radius: 10rem;
+}
+
+.counter__remove,
+.counter__add {
+  border: none;
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.footer_addBtn {
+  width: 39.2rem;
+  height: 5.6rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  background-color: var(--COLOR-PRIMARY);
+  border: none;
+  color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
+}

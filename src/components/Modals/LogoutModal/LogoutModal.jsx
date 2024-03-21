@@ -1,7 +1,9 @@
 import React from "react";
-import "./LogoutModal.module.css";
-import classNames from "classnames";
+import classnames from "classnames";
 import { useDispatch } from "react-redux";
+import { hideModal } from "../../../redux/slices/modalSlice";
+import { icons } from "../../../assets";
+import styles from "./LogoutModal.module.css";
 
 const LogoutModal = () => {
   const dispatch = useDispatch();
@@ -9,15 +11,16 @@ const LogoutModal = () => {
   const handleModalClose = () => {
     dispatch(hideModal());
   };
+
   return (
     <div className={styles.modal}>
       <div className={styles.modal__overlay}>
         <div className={styles.modal__wrapper}>
           <div className={styles.modal__content}>
             <div className={styles.modal__header}>
-              <h3>Выход из учетной записи</h3>
+              <h3 className={styles.modal_title}>Выход из учетной записи</h3>
               <img
-                src={mdi_closeBlack}
+                src={icons.close_icon}
                 alt="Close"
                 className={styles.modal__close}
                 onClick={handleModalClose}
