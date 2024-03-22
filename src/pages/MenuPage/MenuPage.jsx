@@ -45,7 +45,7 @@ const MenuPage = () => {
     <MainLayout>
       <section className={classnames(styles.container)}>
         <MenuTypeItems />
-        <div className={styles.menuItem_container}>
+        <div className={classnames(styles.menuItem_container)}>
           {menuItem.map((menuItem) => (
             <MenuCard key={menuItem.id} menuItem={menuItem} />
           ))}

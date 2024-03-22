@@ -14,7 +14,7 @@ main {
   justify-content: center;
   height: 100%;
   padding: 32px;
-  /* overflow: scroll; */
+  /* overflow-y: scroll; */
 }
 .tableContainer {
   display: flex;

@@ -1,5 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "./Pagination.module.css";
+import classnames from "classnames";
 
 export const Pagination = () => {
-  return <div>Pagination</div>;
+  const [pageNumber, setPageNumber] = useState(1);
+  console.log(pageNumber, "page number");
+
+  // function nextPage() {
+  //   if (pageNumber < pageNumbers.length) {
+  //     dispatch(setPageNumber(pageNumber + 1));
+  //   }
+  // }
+  // function prevPage() {
+  //   if (pageNumber > 1) {
+  //     dispatch(setPageNumber(pageNumber - 1));
+  //   }
+  // }
+
+  const pageNumbers = [1, 2, 3, 4, 5, 6, 7];
+
+  return (
+    <div className={styles.paginationContainer}>
+      <button
+        className={classnames(styles.button)}
+        style={
+          pageNumber !== 1
+            ? {
+                backgroundColor: "#35536B",
+                color: "#fff",
+                transition: "0.3s",
+              }
+            : null
+        }
+        // onClick={prevPage}
+      >
+        {"<"}
+      </button>
+      {pageNumbers.map((pageNum) => (
+        <button
+          className={classnames(
+            { [styles.active]: pageNumber === pageNum },
+            styles.button
+          )}
+          value={pageNum}
+          onClick={() => setPageNumber(pageNum)}
+          key={pageNum}
+        >
+          {pageNum}
+        </button>
+      ))}
+      <button
+        // onClick={nextPage}
+        className={classnames(styles.button)}
+        style={
+          pageNumber !== pageNumbers[pageNumbers.length - 1]
+            ? {
+                backgroundColor: "#35536B",
+                color: "#fff",
+                transition: "0.3s",
+              }
+            : null
+        }
+        // disabled={pageNumber === totalPageCount}
+      >
+        {">"}
+      </button>
+    </div>
+  );
 };
