@@ -17,13 +17,13 @@ const Modals = () => {
     RightSideBar: RightSideBar,
   };
 
-  // const ModalComponent = currentModal ? ModalsMap[currentModal] : null;
+  const ModalComponent = currentModal ? ModalsMap[currentModal] : null;
 
-  // return isModalOpen && ModalComponent ? (
-  //   <ModalComponent {...modalProps} />
-  // ) : null;
+  return isModalOpen && ModalComponent ? (
+    <ModalComponent {...modalProps} />
+  ) : null;
 
-  return currentModal ? ModalsMap[currentModal](modalProps) : null;
+  // return currentModal ? ModalsMap[currentModal](modalProps) : null;
 };
 
 export default Modals;

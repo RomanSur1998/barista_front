@@ -39,6 +39,10 @@
   font-size: 32px;
 }
 
+.modal__header img {
+  cursor: pointer;
+}
+
 .about_wrapper {
   display: flex;
   align-items: center;

@@ -6,8 +6,8 @@ import { icons } from "../../../assets";
 import classnames from "classnames";
 
 const AdditivesModal = () => {
-  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   const handleModalClose = () => {
     dispatch(hideModal());
