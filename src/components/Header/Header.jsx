@@ -8,6 +8,7 @@ const Header = () => {
   const handleOrderTypeSelection = (ordertype) => {
     setSelectedOrderType(ordertype);
   };
+
   return (
     <header className={classnames(styles.headerContainer)}>
       <h2 className={classnames(styles.title)}>Заказы</h2>
