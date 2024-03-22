@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { images } from "../../assets/";
 import classNames from "classnames";
 import { showModal } from "../../redux/slices/modalSlice";
@@ -34,13 +33,13 @@ const MenuCard = ({ menuItem }) => {
 
   return (
     <>
-      <div className={classNames(styles.menucard)} onClick={handleShowModal}>
+      <div className={classNames(styles.menucard)}>
         <div
           className={classNames(styles.menucard__content, [
             !contentVisible && styles.menucardContent_hidden,
           ])}
         >
-          <div>
+          <div onClick={handleShowModal}>
             <img
               src={menuItem.img}
               alt="The menu item"

@@ -14,15 +14,18 @@ const OrdersPage = () => {
 
   return (
     <MainLayout>
-      <OrderStatusItems selectedOrderType={selectedOrderType} />
       <div className={classnames(styles.order_container)}>
-        <OrderCard />
-        <OrderCard />
-        <OrderCard />
-        <OrderCard />
-        <OrderCard />
-        <OrderCard />
-        <OrderCard />
+        <OrderStatusItems selectedOrderType={selectedOrderType} />
+        <div className={classnames(styles.card_container)}>
+          <OrderCard />
+          <OrderCard />
+          <OrderCard />
+          <OrderCard />
+          <OrderCard />
+          <OrderCard />
+          <OrderCard />
+        </div>
+
         <div className={classnames(styles.pagination)}>
           <Pagination />
         </div>
