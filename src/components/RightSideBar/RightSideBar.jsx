@@ -3,6 +3,7 @@ import { icons, images } from "../../assets";
 import { hideModal } from "../../redux/slices/modalSlice";
 import styles from "./RightSideBar.module.css";
 import { useDispatch } from "react-redux";
+import BasketCard from "../BasketCard/BasketCard";
 
 const RightSideBar = () => {
   //   const [openSideBar, setOpenSideBar] = useState(true);

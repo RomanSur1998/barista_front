@@ -9,12 +9,7 @@ const MainLayout = ({ children }) => {
       <SideBar />
       <main>
         <Header />
-        <section className={styles.postionContainer}>
-          {/* <section className={styles.tableContainer}> */}
-          {children}
-          {/* <div className={styles.myPagination}></div> */}
-          {/* </section> */}
-        </section>
+        <section className={styles.postionContainer}>{children}</section>
       </main>
     </div>
   );

@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  height: 100vh;
 }
 
 main {
@@ -11,7 +12,7 @@ main {
 .postionContainer {
   display: flex;
   justify-content: center;
-  height: 100%;
+  overflow: auto;
   padding: 32px;
 }
 .tableContainer {

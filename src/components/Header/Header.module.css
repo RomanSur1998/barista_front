@@ -75,3 +75,24 @@
   color: #ffffff;
   border-radius: 100px;
 }
+
+.input {
+  border-radius: 14px;
+  background: rgb(235, 239, 242);
+  width: 350px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.input input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: rgb(53, 83, 107);
+  font-size: 18px;
+  font-weight: 500;
+}

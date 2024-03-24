@@ -9,6 +9,7 @@ import notification_icon from "./icons/notification_icon.svg";
 import close_icon from "./icons/close_icon.svg";
 import coffeeImg from "./images/coffeeImg.svg";
 import coffeeBobs_icon from "./icons/coffeeBobs_icon.svg";
+import search_icon from "./icons/search_icon.svg";
 import bakery_icon from "./icons/bakery_icon.svg";
 import dessert_icon from "./icons/dessert_icon.svg";
 import cocktail_icon from "./icons/cocktail_icon.svg";
@@ -37,4 +38,5 @@ export const icons = {
   dessert_icon: dessert_icon,
   cocktail_icon: cocktail_icon,
   closeWhite_icon: closeWhite_icon,
+  search_icon: search_icon,
 };
