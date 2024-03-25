@@ -4,14 +4,21 @@ import classnames from "classnames";
 import { useLocation } from "react-router-dom";
 import { icons } from "../../assets";
 import { headersName } from "../../helpers/HeadersName";
+import Notifications from "../Notifications/Notifications";
 
 const Header = () => {
+  const [isOpenNotification, setIsOpenNotification] = useState(false);
+
   const { pathname } = useLocation();
   console.log(pathname, "PATH NAME");
 
   const [selectedOrderType, setSelectedOrderType] = useState("takeaway");
   const handleOrderTypeSelection = (ordertype) => {
     setSelectedOrderType(ordertype);
+  };
+
+  const openNotification = () => {
+    setIsOpenNotification(!isOpenNotification);
   };
 
   return (
@@ -49,9 +56,26 @@ const Header = () => {
         </div>
       )}
 
-      <button className={classnames(styles.createButtnon)}>
-        <img src={icons.notification_icon} alt="" />
+      <button
+        className={classnames(styles.createButtnon)}
+        onClick={openNotification}
+      >
+        <img
+          src={icons.notification_icon}
+          alt="Notifications"
+          className={styles.notifications_img}
+          onClick={openNotification}
+        />
       </button>
+
+      {/* {isOpenNotification && ( */}
+      <Notifications
+        isOpen={isOpenNotification}
+        className={`${styles.notificationBlock} ${
+          isOpenNotification ? styles.notificationBlock_active : ""
+        }`}
+      />
+      {/* // )} */}
     </header>
   );
 };

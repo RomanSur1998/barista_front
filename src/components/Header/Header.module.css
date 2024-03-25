@@ -12,6 +12,7 @@
   align-items: center;
   padding-inline: 24px;
   background-color: #fff;
+  position: relative;
 }
 
 .input input {
