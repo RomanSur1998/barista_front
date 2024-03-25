@@ -47,7 +47,7 @@ const noticeDataList = [
   },
 ];
 
-const Notifications = ({ isOpen, notifications, onClose }) => {
+const Notifications = ({ isOpen, onClose }) => {
   const [notificationList, setNotificationList] = useState(noticeDataList);
   const [isOpenNotificationList, setIsOpenNotificationList] = useState(false);
   const [isOpenNotification, setIsOpenNotification] = useState(false);
@@ -67,6 +67,11 @@ const Notifications = ({ isOpen, notifications, onClose }) => {
     setNotificationList([]);
   };
 
+  const handleToggleNotifications = () => {
+    // Toggle the visibility of the notifications
+    setNotificationList(isOpen ? [] : noticeDataList);
+  };
+
   const handleClick = (id) => {
     console.log(`Элемент с id ${id} был кликнут!`);
   };
@@ -80,7 +85,7 @@ const Notifications = ({ isOpen, notifications, onClose }) => {
       <div className={styles.notificationBlock__titleBlock}>
         <div></div>
         <h3>Уведомления</h3>
-        <button onClick={openNotification}>
+        <button onClick={onClose}>
           <img src={icons.closeWhite_icon} alt="closeIcon" />
         </button>
       </div>
