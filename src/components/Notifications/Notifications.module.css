@@ -1,0 +1,153 @@
+.notificationBlock {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 10px;
+  width: 440px;
+  height: 528px;
+  padding: 10px 20px 24px;
+  background-color: #f47356;
+  border-radius: 14px;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: 0.3s;
+  /* max-height: 450px; */
+}
+
+.notificationBlock_active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.notificationBlock__titleBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 12px;
+  height: 64px;
+}
+.notificationBlock__titleBlock h3 {
+  font-size: 18px;
+  color: #fefefe;
+  padding: 0;
+  margin-left: 24px;
+}
+.notificationBlock__titleBlock button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.notificationBlock__titleBlock img {
+  width: 24px;
+  height: 24px;
+}
+
+.notificationBlock__clearBtnBlock {
+  display: flex;
+  justify-content: end;
+}
+.notificationBlock__clearBtn {
+  color: #ffffff;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.notificationBlock__innerBlock {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 16px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.notificationBlock__innerBlock::-webkit-scrollbar {
+  width: 8px;
+}
+
+.notificationBlock__innerBlock::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 2px;
+}
+
+.notificationBlock__innerBlock::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+.notificationBlock__list {
+  max-width: 400px;
+  max-height: 120px;
+  height: 100vh;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+.notificationBlock__list_active_active {
+  display: none;
+}
+
+.notificationBlock__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.notificationBlock__info button {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.notificationBlock__info img {
+  width: 20px;
+  height: 20px;
+}
+
+.notificationBlock__data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.notificationBlockCard__title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #2a3440;
+}
+
+.notificationBlockCard__time {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.notificationBlock__listText {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.notificationBlock__noNotifications {
+  color: #ffffff;
+  font-size: 18px;
+}

@@ -12,6 +12,7 @@
   align-items: center;
   padding-inline: 24px;
   background-color: #fff;
+  position: relative;
 }
 
 .input input {
@@ -24,11 +25,16 @@
   font-size: 18px;
   font-weight: 500;
 }
-.createButtnon {
+.createButton {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
+
+.createButton:active {
+  transform: translateY(1px);
+}
+
 .headerSelect {
   width: 720px;
   background-color: #ebeff2;
