@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 48px;
 }
 .form {
@@ -45,4 +44,21 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+.text_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.error {
+  color: #f47356;
+}
+
+.text {
+  color: rgb(244, 86, 86);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
 }

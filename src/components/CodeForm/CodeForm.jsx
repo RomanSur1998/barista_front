@@ -31,8 +31,9 @@ const CodeForm = () => {
       backgroundColor: "#EBEFF2",
       borderRadius: "10px",
       outline: "none",
-      border: "none",
+      border: false ? "2px solid #f45656" : "none",
       textAlign: "center",
+      color: false ? "#f45656" : null,
     },
     placeholder: "_",
   });
@@ -46,7 +47,15 @@ const CodeForm = () => {
           onSubmit={formik.handleSubmit}
           className={classnames(styles.form)}
         >
-          <h2>Код подтверждения</h2>
+          <div className={classnames(styles.text_block)}>
+            <h2>Код подтверждения</h2>
+            {false ? (
+              <span className={classnames(styles.text)}>
+                Код неверный , попробуйте еще раз
+              </span>
+            ) : null}
+          </div>
+
           <div className={styles.otpContainer}>
             <input {...register("digit-1", defaultOptions)} />
             <input {...register("digit-2", defaultOptions)} />
@@ -57,7 +66,9 @@ const CodeForm = () => {
             Войти
           </button>
         </form>
-        <button className={classnames(styles.send)}>Отправить еще раз</button>
+        <button className={classnames(styles.send, { [styles.error]: true })}>
+          Отправить еще раз
+        </button>
       </div>
     </AuthLayout>
   );

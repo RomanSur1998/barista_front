@@ -38,3 +38,8 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.error {
+  border: 2px solid #f45656;
+  color: #f45656;
+}
