@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Notifications.module.css";
 import { icons } from "../../assets";
+import NotificationCards from "../NotificationCards/NotificationCards";
 
 const noticeDataList = [
   {
@@ -49,12 +50,12 @@ const noticeDataList = [
 
 const Notifications = ({ isOpen, onClose }) => {
   const [notificationList, setNotificationList] = useState(noticeDataList);
-  const [isOpenNotificationList, setIsOpenNotificationList] = useState(false);
-  const [isOpenNotification, setIsOpenNotification] = useState(false);
+  //const [isOpenNotificationList, setIsOpenNotificationList] = useState(false);
+  //const [isOpenNotification, setIsOpenNotification] = useState(false);
 
-  const openNotification = () => {
-    setIsOpenNotification(!isOpenNotification);
-  };
+  // const openNotification = () => {
+  //   setIsOpenNotification(!isOpenNotification);
+  // };
 
   const closeNotificationList = (id) => {
     const updatedNotificationList = notificationList.filter(
@@ -65,11 +66,6 @@ const Notifications = ({ isOpen, onClose }) => {
 
   const closeAllNotificationList = () => {
     setNotificationList([]);
-  };
-
-  const handleToggleNotifications = () => {
-    // Toggle the visibility of the notifications
-    setNotificationList(isOpen ? [] : noticeDataList);
   };
 
   const handleClick = (id) => {
@@ -105,39 +101,12 @@ const Notifications = ({ isOpen, onClose }) => {
           </h3>
         ) : (
           notificationList.map((noticeData) => (
-            <li
-              id={noticeData.id}
-              onClick={() => handleClick(noticeData.id)}
+            <NotificationCards
               key={noticeData.id}
-              className={`${styles.notificationBlock__list} ${
-                isOpenNotificationList
-                  ? styles.notificationBlock__list_active
-                  : ""
-              }`}
-            >
-              <div className={styles.notificationBlock__info}>
-                <div className={styles.notificationBlock__data}>
-                  <p className={styles.notificationBlockCard__title}>
-                    {noticeData.data}
-                  </p>
-
-                  <p className={styles.notificationBlockCard__time}>
-                    {noticeData.time}
-                  </p>
-                </div>
-                <button onClick={() => closeNotificationList(noticeData.id)}>
-                  <img src={icons.close_icon} alt="closeIconBlack" />
-                </button>
-              </div>
-              <div className={styles.notificationBlock__listText}>
-                {noticeData.fewProducts}
-              </div>
-              <div className={styles.notificationBlock__listText}>
-                <span className={styles.notificationBlock__listText}>
-                  {noticeData.branch}
-                </span>
-              </div>
-            </li>
+              noticeData={noticeData}
+              closeNotificationList={closeNotificationList}
+              handleClick={handleClick}
+            />
           ))
         )}
       </ul>

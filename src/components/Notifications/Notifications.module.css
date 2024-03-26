@@ -85,6 +85,13 @@
   background-color: #ffffff;
 }
 
+.notificationBlock__noNotifications {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+/*
+
 .notificationBlock__list {
   max-width: 400px;
   max-height: 120px;
@@ -147,7 +154,4 @@
   font-weight: 400;
 }
 
-.notificationBlock__noNotifications {
-  color: #ffffff;
-  font-size: 18px;
-}
+*/
