@@ -1,23 +1,32 @@
+import Cookies from "js-cookie";
 import { configAxios } from "../config";
 
 export const api = {
-  codeConfirm: async (data) => {
+  codeConfirm: async (data, navigate) => {
     try {
       const response = await configAxios.post(
         "/api/v1/auth/code-confirm",
         data
       );
+      if (response.status === 200) {
+        Cookies.set("accessToken", response.data.accessToken);
+        Cookies.set("refreshToken", response.data.refreshToken, { expires: 1 });
+        navigate("/orders");
+      }
+
       return response;
     } catch (error) {
       return error;
     }
   },
-  autharisation: async (data) => {
+  autharisation: async (data, navigate) => {
     try {
       const response = await configAxios.post(
         `/api/v1/auth/login-no-pass?email=${data}`,
         data
       );
+      navigate("/code");
+      console.log(response, "AUTH");
       return response;
     } catch (error) {
       console.log(error);

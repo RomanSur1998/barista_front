@@ -15,6 +15,9 @@ export const BASE_ROUT_COLLECTION = [
     element: <CodeForm />,
     id: 2,
   },
+];
+
+export const PRIVATE_ROUT_COLLECTION = [
   {
     link: "/orders",
     element: <OrdersPage />,

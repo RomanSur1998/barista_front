@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { API } from "../constants/url";
+import { API } from "../constants/url";
 import Cookies from "js-cookie";
 
 export const configAxios = axios.create({
@@ -15,7 +15,7 @@ export const configAxios = axios.create({
 //     const accessToken = Cookies.get("accessToken");
 //     if (
 //       accessToken &&
-//       config.url !== "/api/v1/auth/admin-login" &&
+//       config.url !== "/api/v1/auth/code-confirm" &&
 //       config.url !== "/api/v1/auth/refresh-token"
 //     ) {
 //       config.headers.Authorization = `Bearer ${accessToken}`;
@@ -27,36 +27,36 @@ export const configAxios = axios.create({
 //   }
 // );
 
-// configAxios.interceptors.response.use(
-//   (response) => response,
-//   async (error) => {
-//     const config = error?.config;
+configAxios.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const config = error?.config;
 
-//     if (error?.response?.status === 401 && !config?._retry) {
-//       config._retry = true;
+    if (error?.response?.status === 401 && !config?._retry) {
+      config._retry = true;
 
-//       const refreshToken = Cookies.get("refreshToken");
-//       const refreshData = {
-//         email: "admin@gmail.com",
-//         token: refreshToken,
-//       };
+      const refreshToken = Cookies.get("refreshToken");
+      const refreshData = {
+        email: "admin@gmail.com",
+        token: refreshToken,
+      };
 
-//       try {
-//         const result = await configAxios.post(
-//           "/api/v1/auth/refresh-token",
-//           refreshData
-//         );
+      try {
+        const result = await configAxios.post(
+          "/api/v1/auth/refresh-token",
+          refreshData
+        );
 
-//         if (result?.data.accessToken) {
-//           Cookies.set("accessToken", result.data.accessToken);
-//           Cookies.set("refreshToken", result.data.refreshToken);
-//           config.headers.Authorization = `Bearer ${result.data.accessToken}`;
-//           return configAxios(config);
-//         }
-//       } catch (refreshError) {
-//         return Promise.reject(refreshError);
-//       }
-//     }
-//     return Promise.reject(error);
-//   }
-// );
+        if (result?.data.accessToken) {
+          Cookies.set("accessToken", result.data.accessToken);
+          Cookies.set("refreshToken", result.data.refreshToken);
+          config.headers.Authorization = `Bearer ${result.data.accessToken}`;
+          return configAxios(config);
+        }
+      } catch (refreshError) {
+        return Promise.reject(refreshError);
+      }
+    }
+    return Promise.reject(error);
+  }
+);

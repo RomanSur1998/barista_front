@@ -5,14 +5,22 @@ import styles from "./CodeForm.module.css";
 import * as yup from "yup";
 import AuthLayout from "../../layout/AuthLayout/AuthLayout";
 import classnames from "classnames";
+import { useDispatch } from "react-redux";
+import { codeConfirm } from "../../redux/actions/authAction";
+import { useNavigate } from "react-router-dom";
 
 const CodeForm = () => {
+  const disptch = useDispatch();
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
+      email: "romansurkov87@gmail.com",
       code: "",
     },
     onSubmit: (values) => {
       console.log(values.code);
+      disptch(codeConfirm({ data: values, navigate }));
     },
     validationSchema: yup.object({
       code: yup.string().required().min(4).max(4),

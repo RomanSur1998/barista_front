@@ -25,7 +25,6 @@ const OrdersPage = () => {
           <OrderCard />
           <OrderCard />
         </div>
-
         <div className={classnames(styles.pagination)}>
           <Pagination />
         </div>
