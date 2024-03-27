@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { API } from "../constants/url";
+import { API } from "../constants/url";
 import Cookies from "js-cookie";
 
 export const configAxios = axios.create({

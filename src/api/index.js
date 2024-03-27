@@ -25,3 +25,14 @@ export const api = {
     }
   },
 };
+
+export const getAllCategories = async (data) => {
+  try {
+    const response = await configAxios.get("/api/v1/category/all", data);
+    return response;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
