@@ -13,9 +13,12 @@ configAxios.interceptors.request.use(
   (config) => {
     console.log("URL:", config.url);
     const accessToken = Cookies.get("accessToken");
+
     if (
       accessToken &&
       config.url !== "/api/v1/auth/code-confirm" &&
+      config.url !==
+        `/api/v1/auth/login-no-pass?email=${Cookies.get("email")}` &&
       config.url !== "/api/v1/auth/refresh-token"
     ) {
       config.headers.Authorization = `Bearer ${accessToken}`;

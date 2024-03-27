@@ -8,6 +8,7 @@ import { shemas } from "../../helpers/Shemas";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authBarmen } from "../../redux/actions/authAction";
+import Cookies from "js-cookie";
 
 const AuthForm = () => {
   const { error } = useSelector((state) => state.auth);
@@ -18,8 +19,10 @@ const AuthForm = () => {
     initialValues: {
       email: "",
     },
-    onSubmit: (values) =>
-      dispatch(authBarmen({ data: values.email, navigate })),
+    onSubmit: (values) => {
+      Cookies.set("email", formik.values.email);
+      dispatch(authBarmen({ data: values.email, navigate }));
+    },
     validationSchema: shemas.authForm,
   });
 

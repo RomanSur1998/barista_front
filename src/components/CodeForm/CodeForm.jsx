@@ -8,6 +8,7 @@ import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { codeConfirm } from "../../redux/actions/authAction";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const CodeForm = () => {
   const disptch = useDispatch();
@@ -17,7 +18,7 @@ const CodeForm = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "romansurkov87@gmail.com",
+      email: Cookies.get("email"),
       code: "",
     },
     onSubmit: (values) => {
