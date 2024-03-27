@@ -9,23 +9,23 @@ export const configAxios = axios.create({
   },
 });
 
-// configAxios.interceptors.request.use(
-//   (config) => {
-//     console.log("URL:", config.url);
-//     const accessToken = Cookies.get("accessToken");
-//     if (
-//       accessToken &&
-//       config.url !== "/api/v1/auth/code-confirm" &&
-//       config.url !== "/api/v1/auth/refresh-token"
-//     ) {
-//       config.headers.Authorization = `Bearer ${accessToken}`;
-//     }
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
+configAxios.interceptors.request.use(
+  (config) => {
+    console.log("URL:", config.url);
+    const accessToken = Cookies.get("accessToken");
+    if (
+      accessToken &&
+      config.url !== "/api/v1/auth/code-confirm" &&
+      config.url !== "/api/v1/auth/refresh-token"
+    ) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 configAxios.interceptors.response.use(
   (response) => response,

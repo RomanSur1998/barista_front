@@ -16,7 +16,7 @@ export const api = {
 
       return response;
     } catch (error) {
-      return error;
+      throw error;
     }
   },
   autharisation: async (data, navigate) => {

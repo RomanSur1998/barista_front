@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { authBarmen } from "../actions/authAction";
+import { authBarmen, codeConfirm } from "../actions/authAction";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -21,6 +21,9 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(authBarmen.fulfilled, (state, actions) => {});
     builder.addCase(authBarmen.rejected, (state, actions) => {
+      state.error = true;
+    });
+    builder.addCase(codeConfirm.rejected, (state, action) => {
       state.error = true;
     });
   },

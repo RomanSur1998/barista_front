@@ -5,13 +5,15 @@ import styles from "./CodeForm.module.css";
 import * as yup from "yup";
 import AuthLayout from "../../layout/AuthLayout/AuthLayout";
 import classnames from "classnames";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { codeConfirm } from "../../redux/actions/authAction";
 import { useNavigate } from "react-router-dom";
 
 const CodeForm = () => {
   const disptch = useDispatch();
   const navigate = useNavigate();
+  const { error } = useSelector((state) => state.auth);
+  console.log(error, "Ошибка пришла");
 
   const formik = useFormik({
     initialValues: {
@@ -39,9 +41,9 @@ const CodeForm = () => {
       backgroundColor: "#EBEFF2",
       borderRadius: "10px",
       outline: "none",
-      border: false ? "2px solid #f45656" : "none",
+      border: error ? "2px solid #f45656" : "none",
       textAlign: "center",
-      color: false ? "#f45656" : null,
+      color: error ? "#f45656" : null,
     },
     placeholder: "_",
   });
@@ -57,7 +59,7 @@ const CodeForm = () => {
         >
           <div className={classnames(styles.text_block)}>
             <h2>Код подтверждения</h2>
-            {false ? (
+            {error ? (
               <span className={classnames(styles.text)}>
                 Код неверный , попробуйте еще раз
               </span>
@@ -74,7 +76,7 @@ const CodeForm = () => {
             Войти
           </button>
         </form>
-        <button className={classnames(styles.send, { [styles.error]: true })}>
+        <button className={classnames(styles.send, { [styles.error]: error })}>
           Отправить еще раз
         </button>
       </div>

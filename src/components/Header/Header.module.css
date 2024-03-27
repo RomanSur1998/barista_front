@@ -5,6 +5,10 @@
   line-height: 120%;
   text-align: left;
 }
+.flex {
+  display: flex;
+  gap: 40px;
+}
 .headerContainer {
   height: 100px;
   display: flex;
