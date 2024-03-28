@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import styles from "./ScheduleData.module.css";
 
-export const ScheduleData = () => {
+export const ScheduleData = ({ data }) => {
   return (
     <div className={classnames(styles.schedule_container)}>
       <div className={styles.day}>
@@ -16,27 +16,21 @@ export const ScheduleData = () => {
         </div>
       </div>
       <div className={classnames(styles.flex, styles.week)}>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Понедельник</h3>
-        </div>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Вторник</h3>
-        </div>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Среда</h3>
-        </div>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Четверг</h3>
-        </div>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Пятница</h3>
-        </div>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Суббота</h3>
-        </div>
-        <div className={classnames(styles.flex, styles.align)}>
-          <div className={classnames(styles.rect)}></div> <h3>Воскресенье</h3>
-        </div>
+        {data?.workDays?.map((elem) => {
+          return (
+            <div
+              className={classnames(styles.flex, styles.align)}
+              key={elem.day}
+            >
+              <div
+                className={classnames(styles.rect, {
+                  [styles.color]: elem?.checked,
+                })}
+              ></div>{" "}
+              <h3>{elem?.day}</h3>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

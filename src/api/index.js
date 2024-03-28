@@ -11,7 +11,7 @@ export const api = {
       if (response.status === 200) {
         Cookies.set("accessToken", response.data.accessToken);
         Cookies.set("refreshToken", response.data.refreshToken, { expires: 1 });
-        navigate("/orders");
+        navigate("/filial");
       }
 
       return response;
@@ -27,6 +27,41 @@ export const api = {
       );
       navigate("/code");
       console.log(response, "AUTH");
+      return response;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  },
+  getFilialName: async () => {
+    try {
+      const response = await configAxios.get(
+        "/api/v1/filial/all?number=1&size=10"
+      );
+      console.log(response, "AUTH");
+      return response;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  },
+
+  getOrders: async () => {
+    try {
+      const response = await configAxios.get(
+        `/api/v1/order/barmen-orders?filialId=1&status=2&here=true&number=3&size=4`
+      );
+      console.log(response, "AUTH");
+      return response;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  },
+  getProfile: async () => {
+    try {
+      const response = await configAxios.get("/api/v1/profile/staff-profile");
+      console.log(response, "Profile");
       return response;
     } catch (error) {
       console.log(error);
