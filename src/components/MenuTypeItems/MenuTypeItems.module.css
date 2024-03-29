@@ -11,12 +11,34 @@
   justify-content: center;
   gap: 12px;
   height: 52px;
-  border-radius: 100px;
+  border-radius: 80px;
   cursor: pointer;
+}
+
+.item_wrapper:hover,
+.item_wrapper:hover .item_title {
+  background-color: #f47356;
+  color: #fff;
+  border-radius: 80px;
 }
 
 .item_title {
   font-weight: 500;
   font-size: 20px;
   color: #2a3440;
+}
+
+/* .item_title:hover {
+  color: #fff;
+} */
+
+.item_icon {
+  width: 20px;
+  height: 20px;
+  background-color: #f47356;
+  border-radius: 50%;
+}
+
+.item_icon:hover {
+  background-color: #fff;
 }

@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { icons } from "../../assets";
 import styles from "./MenuTypeItems.module.css";
-// import { getCategories } from "../../redux/actions/categoryAction";
+import { getCategories } from "../../redux/actions/categoryAction";
 
 const MenuTypeItems = () => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.category.categories);
+  const categories = useSelector((state) => state.category.categories.data);
 
-  // useEffect(() => {
-  //   dispatch(getCategories());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
 
   const data = [
     {
@@ -37,16 +37,10 @@ const MenuTypeItems = () => {
 
   return (
     <div className={styles.container}>
-      {/* //   {data.map((item) => (
-    //     <div key={item.id} className={styles.item_wrapper}>
-    //       <img src={item.img} alt={item.title} />
-    //       <p className={styles.item_title}>{item.title}</p>
-    //     </div>
-    //   ))} */}
-      {categories?.map((category) => (
-        <div key={category.id} className={styles.item_wrapper}>
-          {/* <img src={item.img} alt={item.title} /> */}
-          <p className={styles.item_title}>{category.name}</p>
+      {categories?.map((category, index) => (
+        <div className={styles.item_wrapper} key={index}>
+          <div className={styles.item_icon}></div>
+          <p className={styles.item_title}>{category}</p>
         </div>
       ))}
     </div>
