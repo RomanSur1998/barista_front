@@ -38,8 +38,24 @@ export const api = {
 export const getAllCategories = async (data) => {
   try {
     const response = await configAxios.get("/api/v1/category/all", data);
-    return response;
     console.log(response);
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const getProductsByCategory = async (data) => {
+  try {
+    // const response = await configAxios.get(
+    //   `/api/v1/menu/find-by-category/кофе?number=1&size=100`
+    // );
+    const response = await configAxios.get(
+      `/api/v1/menu/find-by-category/${data}?number=1&size=100`
+    );
+    console.log(response);
+    return response;
   } catch (error) {
     console.log(error);
     throw error;

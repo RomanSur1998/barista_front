@@ -3,42 +3,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { icons } from "../../assets";
 import styles from "./MenuTypeItems.module.css";
 import { getCategories } from "../../redux/actions/categoryAction";
+import { selectCategory } from "../../redux/slices/categorySlice";
 
-const MenuTypeItems = () => {
+const MenuTypeItems = ({ handleCategoryChoose }) => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.category.categories.data);
+  const categories = useSelector((state) => state.category.categories);
+  const selectedCategoryItem = useSelector((state) => state.categories);
 
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
 
-  const data = [
-    {
-      id: 1,
-      img: icons.coffeeBobs_icon,
-      title: "Кофе",
-    },
-    {
-      id: 2,
-      img: icons.bakery_icon,
-      title: "Выпечка",
-    },
-    {
-      id: 3,
-      img: icons.dessert_icon,
-      title: "Десерты",
-    },
-    {
-      id: 4,
-      img: icons.cocktail_icon,
-      title: "Напитки",
-    },
-  ];
-
   return (
     <div className={styles.container}>
       {categories?.map((category, index) => (
-        <div className={styles.item_wrapper} key={index}>
+        <div
+          className={styles.item_wrapper}
+          key={index}
+          onClick={() => handleCategoryChoose(category)}
+        >
           <div className={styles.item_icon}></div>
           <p className={styles.item_title}>{category}</p>
         </div>

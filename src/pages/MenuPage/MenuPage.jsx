@@ -5,58 +5,62 @@ import MenuCard from "../../components/MenuCard/MenuCard";
 import { images } from "../../assets";
 import MenuTypeItems from "../../components/MenuTypeItems/MenuTypeItems";
 import { showModal } from "../../redux/slices/modalSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./MenuPage.module.css";
+import { getProductsInMenu } from "../../redux/actions/categoryAction";
 
 const MenuPage = () => {
   const dispatch = useDispatch();
+  // const products = useSelector((state) => state.product.products.data);
 
   const handleShowSidebar = () => {
     dispatch(showModal({ modalType: "RightSideBar" }));
   };
 
-  const menuItem = [
-    {
-      id: 1,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-    {
-      id: 2,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
+  const handleCategoryChoose = (category) => {
+    dispatch(getProductsInMenu(category));
+  };
 
-    {
-      id: 3,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-    {
-      id: 4,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-    {
-      id: 5,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-  ];
+  // const menuItem = [
+  //   {
+  //     id: 1,
+  //     img: images.coffeeImg,
+  //     title: "Капучино",
+  //     price: "140 c",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: images.coffeeImg,
+  //     title: "Капучино",
+  //     price: "140 c",
+  //   },
+
+  //   {
+  //     id: 3,
+  //     img: images.coffeeImg,
+  //     title: "Капучино",
+  //     price: "140 c",
+  //   },
+  //   {
+  //     id: 4,
+  //     img: images.coffeeImg,
+  //     title: "Капучино",
+  //     price: "140 c",
+  //   },
+  //   {
+  //     id: 5,
+  //     img: images.coffeeImg,
+  //     title: "Капучино",
+  //     price: "140 c",
+  //   },
+  // ];
 
   return (
     <MainLayout>
       <section className={classnames(styles.container)}>
-        <MenuTypeItems />
+        <MenuTypeItems handleCategoryChoose={handleCategoryChoose} />
         <div className={classnames(styles.menuItem_container)}>
-          {menuItem.map((menuItem) => (
-            <MenuCard key={menuItem.id} menuItem={menuItem} />
-          ))}
+          {/* <MenuCard products={products} /> */}
         </div>
 
         <div className={styles.orderCheck} onClick={handleShowSidebar}>
