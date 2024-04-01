@@ -8,16 +8,19 @@ import { showModal } from "../../redux/slices/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./MenuPage.module.css";
 import { getProductsInMenu } from "../../redux/actions/categoryAction";
+import { setSelectedCategory } from "../../redux/slices/categorySlice";
 
 const MenuPage = () => {
   const dispatch = useDispatch();
-  // const products = useSelector((state) => state.product.products.data);
+  const selectedCategory = useSelector((state) => state.data);
+  const products = useSelector((state) => state.category.products.responses);
 
   const handleShowSidebar = () => {
     dispatch(showModal({ modalType: "RightSideBar" }));
   };
 
   const handleCategoryChoose = (category) => {
+    dispatch(setSelectedCategory(category));
     dispatch(getProductsInMenu(category));
   };
 
@@ -61,6 +64,7 @@ const MenuPage = () => {
         <MenuTypeItems handleCategoryChoose={handleCategoryChoose} />
         <div className={classnames(styles.menuItem_container)}>
           {/* <MenuCard products={products} /> */}
+          <MenuCard products={products} />
         </div>
 
         <div className={styles.orderCheck} onClick={handleShowSidebar}>

@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { icons } from "../../assets";
 import styles from "./MenuTypeItems.module.css";
 import { getCategories } from "../../redux/actions/categoryAction";
-import { selectCategory } from "../../redux/slices/categorySlice";
+import { setSelectedCategory } from "../../redux/slices/categorySlice";
 
 const MenuTypeItems = ({ handleCategoryChoose }) => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);
-  const selectedCategoryItem = useSelector((state) => state.categories);
+  const selectedCategoryItem = useSelector((state) => state.data);
 
   useEffect(() => {
     dispatch(getCategories());
