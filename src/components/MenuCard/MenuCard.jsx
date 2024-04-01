@@ -4,22 +4,12 @@ import classNames from "classnames";
 import { showModal } from "../../redux/slices/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./MenuCard.module.css";
-import { getProductsInMenu } from "../../redux/actions/categoryAction";
 
 const MenuCard = ({ products }) => {
   const dispatch = useDispatch();
   const [showBtns, setShowBtns] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [contentVisible, setContentVisible] = useState(true);
-
-  // const products = useSelector(
-  //   (state) => state.product.products.data.responses
-  // );
-  // const products = useSelector((state) => state.product.products.data);
-
-  // useEffect(() => {
-  //   dispatch(getProductsInMenu());
-  // }, [dispatch]);
 
   const handleShowModal = () => {
     dispatch(showModal({ modalType: "AboutItemModal" }));
@@ -39,14 +29,6 @@ const MenuCard = ({ products }) => {
       setQuantity(quantity - 1);
     }
   };
-
-  // if (!Array.isArray(products)) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (!Array.isArray(products.responses)) {
-  //   return <div>Loading...</div>;
-  // }
 
   if (!products) {
     return <div>Loading...</div>;
@@ -95,11 +77,6 @@ const MenuCard = ({ products }) => {
           )}
         </div>
       ))}
-      {/* <Modal
-        active={modalActive}
-        setActive={setModalActive}
-        className={styles.additivesModal}
-      ></Modal> */}
     </>
   );
 };

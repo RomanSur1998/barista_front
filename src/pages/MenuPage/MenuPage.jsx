@@ -24,46 +24,11 @@ const MenuPage = () => {
     dispatch(getProductsInMenu(category));
   };
 
-  // const menuItem = [
-  //   {
-  //     id: 1,
-  //     img: images.coffeeImg,
-  //     title: "Капучино",
-  //     price: "140 c",
-  //   },
-  //   {
-  //     id: 2,
-  //     img: images.coffeeImg,
-  //     title: "Капучино",
-  //     price: "140 c",
-  //   },
-
-  //   {
-  //     id: 3,
-  //     img: images.coffeeImg,
-  //     title: "Капучино",
-  //     price: "140 c",
-  //   },
-  //   {
-  //     id: 4,
-  //     img: images.coffeeImg,
-  //     title: "Капучино",
-  //     price: "140 c",
-  //   },
-  //   {
-  //     id: 5,
-  //     img: images.coffeeImg,
-  //     title: "Капучино",
-  //     price: "140 c",
-  //   },
-  // ];
-
   return (
     <MainLayout>
       <section className={classnames(styles.container)}>
         <MenuTypeItems handleCategoryChoose={handleCategoryChoose} />
         <div className={classnames(styles.menuItem_container)}>
-          {/* <MenuCard products={products} /> */}
           <MenuCard products={products} />
         </div>
 
