@@ -9,6 +9,6 @@ export const store = configureStore({
     modal: modalSlice,
     auth: authSlice,
     data: dataSlice,
-    category: categorySlice,
+    menu: categorySlice,
   },
 });

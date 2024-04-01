@@ -1,30 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { icons } from "../../assets";
 import styles from "./MenuTypeItems.module.css";
 import { getCategories } from "../../redux/actions/categoryAction";
 import { setSelectedCategory } from "../../redux/slices/categorySlice";
+import classnames from "classnames";
 
 const MenuTypeItems = ({ handleCategoryChoose }) => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.category.categories);
-  const selectedCategoryItem = useSelector((state) => state.data);
+  const categories = useSelector((state) => state.menu.categories);
+  const [clickedCategory, setClickedCategory] = useState("");
 
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
 
+  const handleClick = (category) => {
+    setClickedCategory(category);
+    handleCategoryChoose(category);
+  };
+
   return (
     <div className={styles.container}>
       {categories?.map((category, index) => (
-        <div
-          className={styles.item_wrapper}
+        <button
+          className={classnames(styles.item_wrapper, {
+            [styles.active]: clickedCategory === category,
+          })}
           key={index}
-          onClick={() => handleCategoryChoose(category)}
+          onClick={() => handleClick(category)}
+          // onClick={() => handleCategoryChoose(category)}
         >
-          <div className={styles.item_icon}></div>
-          <p className={styles.item_title}>{category}</p>
-        </div>
+          <span className={styles.item_icon}></span>
+          {category}
+        </button>
       ))}
     </div>
   );

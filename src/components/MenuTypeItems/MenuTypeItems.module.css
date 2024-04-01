@@ -9,33 +9,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 5px;
   height: 52px;
   border-radius: 80px;
+  border: none;
   cursor: pointer;
-}
-
-.item_wrapper:hover,
-.item_wrapper:hover .item_title {
-  background-color: #f47356;
-  color: #fff;
-  border-radius: 80px;
-}
-
-.item_title {
   font-weight: 500;
   font-size: 20px;
   color: #2a3440;
+  padding: 0 10px;
 }
 
-/* .item_title:hover {
+.item_wrapper:hover {
+  background-color: #f47356;
   color: #fff;
-} */
+}
+
+.item_wrapper.active {
+  background-color: #f47356;
+  color: #fff;
+}
 
 .item_icon {
-  width: 20px;
-  height: 20px;
-  background-color: #f47356;
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
   border-radius: 50%;
 }
 

@@ -48,9 +48,6 @@ export const getAllCategories = async (data) => {
 
 export const getProductsByCategory = async (data) => {
   try {
-    // const response = await configAxios.get(
-    //   `/api/v1/menu/find-by-category/кофе?number=1&size=100`
-    // );
     const response = await configAxios.get(
       `/api/v1/menu/find-by-category/${data}?number=1&size=100`
     );

@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCategories, getProductsInMenu } from "../actions/categoryAction";
+import {
+  getCategories,
+  getProductsInMenu,
+  menuSearch,
+} from "../actions/categoryAction";
 
 const categorySlice = createSlice({
   name: "category",
@@ -44,6 +48,7 @@ const categorySlice = createSlice({
         state.loading = false;
         state.error = true;
       });
+    builder.addCase(menuSearch.pending);
   },
 });
 
