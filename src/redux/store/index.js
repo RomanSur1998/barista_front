@@ -12,5 +12,6 @@ export const store = configureStore({
     data: dataSlice,
     category: categorySlice,
     orders: ordersSlice,
+    menu: categorySlice,
   },
 });

@@ -11,7 +11,7 @@ const AboutItemModal = () => {
     dispatch(hideModal());
   };
 
-  const showAdditivesModal = () => {
+  const showAdditivesModal = ({ products }) => {
     dispatch(showModal({ modalType: "AdditivesModal" }));
   };
 
@@ -21,7 +21,7 @@ const AboutItemModal = () => {
         <div className={styles.modal__wrapper}>
           <div className={styles.modal__content}>
             <div className={styles.modal__header}>
-              <h3>Чизкейк</h3>
+              <h3>{product.name}</h3>
               <img
                 src={icons.close_icon}
                 alt="Close"
@@ -34,6 +34,7 @@ const AboutItemModal = () => {
                 Чизкейк - сладкий десерт, состоящий из одного или нескольких
                 слоев.
               </p>
+              {/* <p>{product.description}</p> */}
             </div>
 
             <div className={styles.ingredients_wrapper}>

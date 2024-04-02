@@ -1,62 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import classnames from "classnames";
 import MenuCard from "../../components/MenuCard/MenuCard";
 import { images } from "../../assets";
 import MenuTypeItems from "../../components/MenuTypeItems/MenuTypeItems";
 import { showModal } from "../../redux/slices/modalSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./MenuPage.module.css";
+import {
+  getCategories,
+  getProductsInMenu,
+} from "../../redux/actions/categoryAction";
+import { setSelectedCategory } from "../../redux/slices/categorySlice";
 
 const MenuPage = () => {
   const dispatch = useDispatch();
+  // const selectedCategory = useSelector((state) => state.data);
+  const products = useSelector((state) => state.menu.products.responses);
 
   const handleShowSidebar = () => {
     dispatch(showModal({ modalType: "RightSideBar" }));
   };
 
-  const menuItem = [
-    {
-      id: 1,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-    {
-      id: 2,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
+  useEffect(() => {
+    dispatch(getCategories()).then((response) => {
+      if (
+        response.payloaf &&
+        response.payload.data &&
+        response.payload.data.length > 0
+      ) {
+        const setFirstCategory = response.payload.data[0];
+        dispatch(setSelectedCategory(setFirstCategory));
+        dispatch(getProductsInMenu(setFirstCategory));
+      }
+    });
+  }, [dispatch]);
 
-    {
-      id: 3,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-    {
-      id: 4,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-    {
-      id: 5,
-      img: images.coffeeImg,
-      title: "Капучино",
-      price: "140 c",
-    },
-  ];
+  const handleCategoryChoose = (category) => {
+    dispatch(setSelectedCategory(category));
+    dispatch(getProductsInMenu(category));
+  };
 
   return (
     <MainLayout>
       <section className={classnames(styles.container)}>
-        <MenuTypeItems />
+        <MenuTypeItems handleCategoryChoose={handleCategoryChoose} />
         <div className={classnames(styles.menuItem_container)}>
-          {menuItem.map((menuItem) => (
-            <MenuCard key={menuItem.id} menuItem={menuItem} />
-          ))}
+          <MenuCard products={products} />
         </div>
 
         <div className={styles.orderCheck} onClick={handleShowSidebar}>
