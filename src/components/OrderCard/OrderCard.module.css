@@ -55,3 +55,28 @@
   font-weight: 400;
   cursor: pointer;
 }
+.done {
+  color: #51db67;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ready {
+  color: #2a3440;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+.cancelled {
+  color: #5f6366;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+.inprocess {
+  color: #f47356;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}

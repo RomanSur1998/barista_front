@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import styles from "./Pagination.module.css";
 import classnames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { setPageNumber } from "../../redux/slices/ordersSlice";
 
 export const Pagination = () => {
-  const [pageNumber, setPageNumber] = useState(1);
-  console.log(pageNumber, "page number");
+  const { pageNumber } = useSelector((state) => state.orders);
+  const dispatch = useDispatch();
 
-  // function nextPage() {
-  //   if (pageNumber < pageNumbers.length) {
-  //     dispatch(setPageNumber(pageNumber + 1));
-  //   }
-  // }
-  // function prevPage() {
-  //   if (pageNumber > 1) {
-  //     dispatch(setPageNumber(pageNumber - 1));
-  //   }
-  // }
+  function nextPage() {
+    if (pageNumber < pageNumbers.length) {
+      dispatch(setPageNumber(pageNumber + 1));
+    }
+  }
+  function prevPage() {
+    if (pageNumber > 1) {
+      dispatch(setPageNumber(pageNumber - 1));
+    }
+  }
+
+  function setPage(page) {
+    dispatch(setPageNumber(page));
+  }
 
   const pageNumbers = [1, 2, 3, 4, 5, 6, 7];
 
@@ -32,7 +38,7 @@ export const Pagination = () => {
               }
             : null
         }
-        // onClick={prevPage}
+        onClick={prevPage}
       >
         {"<"}
       </button>
@@ -43,14 +49,14 @@ export const Pagination = () => {
             styles.button
           )}
           value={pageNum}
-          onClick={() => setPageNumber(pageNum)}
+          onClick={() => setPage(pageNum)}
           key={pageNum}
         >
           {pageNum}
         </button>
       ))}
       <button
-        // onClick={nextPage}
+        onClick={nextPage}
         className={classnames(styles.button)}
         style={
           pageNumber !== pageNumbers[pageNumbers.length - 1]

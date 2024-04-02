@@ -38,8 +38,9 @@ configAxios.interceptors.response.use(
       config._retry = true;
 
       const refreshToken = Cookies.get("refreshToken");
+      const email = Cookies.get("email");
       const refreshData = {
-        email: "admin@gmail.com",
+        email: email,
         token: refreshToken,
       };
 
