@@ -49,7 +49,7 @@ export const api = {
   getOrders: async (statusValue) => {
     try {
       const response = await configAxios.get(
-        `https://neo-cafe.up.railway.app/api/v1/order/barmen-orders?filialId=1&status=${statusValue}&here=true&number=1&size=5`
+        `https://neo-cafe.up.railway.app/api/v1/order/barmen-orders?filialId=1&status=${statusValue}&here=false&number=1&size=5`
       );
       console.log(response, "AUTH");
       return response;
