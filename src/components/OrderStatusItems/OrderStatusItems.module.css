@@ -1,0 +1,97 @@
+.orderstatus_btn:active {
+  background-color: #f47356;
+  color: #ffffff;
+  border-radius: 100px;
+}
+
+.notifications_icon {
+  margin-left: 169px;
+  cursor: pointer;
+}
+
+/* .orders {
+  width: 100%;
+  height: 100%;
+  background-color: var(--COLOR-GRAY);
+} */
+
+.orderstatus_wrapper {
+  margin: 24px 0 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.orderstatus_btn {
+  height: 54px;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 100px;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #ebeff2;
+}
+
+.selectedOrderType {
+  background-color: #f47356;
+  color: #ffffff;
+  border-radius: 100px;
+}
+
+.order_status {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.orderstatus_new {
+  width: 156px;
+  /* // background-color: #F47356;
+  // color: #ffffff; */
+}
+
+.status_new {
+  background-color: #85caff;
+}
+
+.selectedStatus {
+  background-color: #f47356;
+  color: #fff;
+}
+
+.orderstatus_inprocess {
+  width: 200px;
+}
+
+.status_inprocess {
+  background-color: #fdf876;
+}
+
+.orderstatus_ready {
+  width: 157px;
+}
+
+.status_ready {
+  background-color: #51db67;
+}
+
+.orderstatus_cancelled {
+  width: 191px;
+}
+
+.status_cancelled {
+  background-color: #ffffff;
+}
+
+.orderstatus_done {
+  width: 203px;
+}
+
+.status_done {
+  background-color: #2a3440;
+}

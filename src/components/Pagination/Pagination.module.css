@@ -1,0 +1,29 @@
+.paginationContainer {
+  min-width: 385px;
+  height: 60px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  color: #515151;
+  font-size: 20px;
+  font-weight: 400;
+  transition: "0.3s";
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ebeff2;
+  transition: 0.3s;
+}

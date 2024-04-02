@@ -5,6 +5,10 @@
   line-height: 120%;
   text-align: left;
 }
+.flex {
+  display: flex;
+  gap: 40px;
+}
 .headerContainer {
   height: 100px;
   display: flex;
@@ -12,6 +16,7 @@
   align-items: center;
   padding-inline: 24px;
   background-color: #fff;
+  position: relative;
 }
 
 .input input {
@@ -24,11 +29,16 @@
   font-size: 18px;
   font-weight: 500;
 }
-.createButtnon {
+.createButton {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
+
+.createButton:active {
+  transform: translateY(1px);
+}
+
 .headerSelect {
   width: 720px;
   background-color: #ebeff2;
@@ -37,4 +47,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.ordertype_wrapper {
+  display: flex;
+  align-items: center;
+  height: 102px;
+}
+
+.ordertypebtns_wrapper {
+  width: 720px;
+  height: 52px;
+  background-color: #ebeff2;
+  border-radius: 100px;
+}
+
+.orderplace_btn {
+  width: 360px;
+  height: 52px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(42, 52, 64);
+}
+
+.takeaway_btn {
+  border-radius: 100px 0 0 100px;
+}
+
+.inplace_btn {
+  border-radius: 0 100px 100px 0;
+}
+
+.selectedOrderType {
+  background-color: #f47356;
+  color: #ffffff;
+  border-radius: 100px;
+}
+
+.input {
+  border-radius: 14px;
+  background: rgb(235, 239, 242);
+  width: 350px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.input input {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: rgb(53, 83, 107);
+  font-size: 18px;
+  font-weight: 500;
 }

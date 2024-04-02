@@ -1,0 +1,66 @@
+.notificationBlock__list {
+  max-width: 400px;
+  max-height: 120px;
+  height: 100vh;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+.notificationBlock__list_active_active {
+  display: none;
+}
+
+.notificationBlock__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.notificationBlock__info button {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.notificationBlock__info img {
+  width: 20px;
+  height: 20px;
+}
+
+.notificationBlock__data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.notificationBlockCard__title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #2a3440;
+}
+
+.notificationBlockCard__time {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.notificationBlock__listText {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.notificationBlock__noNotifications {
+  color: #ffffff;
+  font-size: 18px;
+}

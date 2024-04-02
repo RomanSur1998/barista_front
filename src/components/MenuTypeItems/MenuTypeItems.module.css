@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.item_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 52px;
+  border-radius: 80px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  color: #2a3440;
+  padding: 0 10px;
+}
+
+.item_wrapper:hover {
+  background-color: #f47356;
+  color: #fff;
+}
+
+.item_wrapper.active {
+  background-color: #f47356;
+  color: #fff;
+}
+
+.item_icon {
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.item_icon:hover {
+  background-color: #fff;
+}

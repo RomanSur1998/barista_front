@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  height: 100vh;
 }
 
 main {
@@ -10,15 +11,15 @@ main {
 }
 .postionContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100%;
+  overflow: auto;
+  padding: 32px;
 }
 .tableContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 55px; */
+
   background-color: #ebeff2;
   width: 100%;
   height: 95%;

@@ -1,0 +1,49 @@
+.schedule_container {
+  width: 500px;
+  min-height: 300px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 32px;
+}
+.round {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #5b7e9a;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #5b7e9a;
+}
+.block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.rect {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #5b7e9a;
+  margin-right: 30px;
+}
+
+.flex {
+  display: flex;
+}
+.align {
+  align-items: center;
+}
+.week {
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.color {
+  background-color: #f47356;
+}

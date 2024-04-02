@@ -3,3 +3,36 @@
   /* background-color: #2377b7; */
   /* height: 100vh; */
 }
+
+.menuItem_container {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 32px 24px;
+}
+
+.orderCheck {
+  position: absolute;
+  bottom: 56px;
+  right: 130px;
+  width: 430px;
+  height: 77px;
+  border-radius: 100px;
+  background-color: #f47356;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.orderCheck__type {
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+}
+
+.orderCheck__price {
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+}
