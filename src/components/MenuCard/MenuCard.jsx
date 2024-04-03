@@ -53,7 +53,7 @@ const MenuCard = ({ products }) => {
 
             <div className={styles.menucard__info}>
               <div className={styles.menucard__title}>{product.name}</div>
-              <div className={styles.menucard__price}>{product.price}</div>
+              <div className={styles.menucard__price}>{product.price} c</div>
             </div>
 
             <button onClick={handleBtnClick} className={styles.menucard__btn}>

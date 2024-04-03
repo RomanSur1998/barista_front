@@ -11,7 +11,7 @@ const AboutItemModal = () => {
     dispatch(hideModal());
   };
 
-  const showAdditivesModal = ({ products }) => {
+  const showAdditivesModal = () => {
     dispatch(showModal({ modalType: "AdditivesModal" }));
   };
 
@@ -21,7 +21,7 @@ const AboutItemModal = () => {
         <div className={styles.modal__wrapper}>
           <div className={styles.modal__content}>
             <div className={styles.modal__header}>
-              <h3>{product.name}</h3>
+              <h3>Чизкейк</h3>
               <img
                 src={icons.close_icon}
                 alt="Close"

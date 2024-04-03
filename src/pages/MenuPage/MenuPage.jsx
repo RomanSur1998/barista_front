@@ -25,7 +25,7 @@ const MenuPage = () => {
   useEffect(() => {
     dispatch(getCategories()).then((response) => {
       if (
-        response.payloaf &&
+        response.payload &&
         response.payload.data &&
         response.payload.data.length > 0
       ) {
