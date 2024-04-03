@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { authBarmen, codeConfirm } from "../actions/authAction";
+import { authBarmen, codeConfirm, getFilialName } from "../actions/authAction";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -9,6 +9,7 @@ export const authSlice = createSlice({
     error: false,
     loading: true,
     accessToken: "",
+    filialList: [],
   },
   reducers: {
     setEmail(state, action) {
@@ -25,6 +26,9 @@ export const authSlice = createSlice({
     });
     builder.addCase(codeConfirm.rejected, (state, action) => {
       state.error = true;
+    });
+    builder.addCase(getFilialName.fulfilled, (state, action) => {
+      state.filialList = action.payload.data.responses;
     });
   },
 });

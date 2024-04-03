@@ -16,6 +16,7 @@ import cocktail_icon from "./icons/cocktail_icon.svg";
 import cheesecake from "./images/cheesecake.png";
 import add_item from "./images/add_item.png";
 import closeWhite_icon from "./icons/closeWhite_icon.svg";
+import arrow_icon from "./icons/arrow_icon.svg";
 
 export const images = {
   auth_image: auth_image,
@@ -39,4 +40,5 @@ export const icons = {
   cocktail_icon: cocktail_icon,
   closeWhite_icon: closeWhite_icon,
   search_icon: search_icon,
+  arrow_icon: arrow_icon,
 };

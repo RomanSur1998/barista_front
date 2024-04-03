@@ -25,3 +25,17 @@ export const codeConfirm = createAsyncThunk(
     }
   }
 );
+
+export const getFilialName = createAsyncThunk(
+  "auth/getFilialName",
+  async () => {
+    try {
+      const response = await api.getFilialName();
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  }
+);
