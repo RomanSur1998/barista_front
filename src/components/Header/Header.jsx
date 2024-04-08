@@ -7,9 +7,12 @@ import { headersName } from "../../helpers/HeadersName";
 import Notifications from "../Notifications/Notifications";
 import { useDispatch, useSelector } from "react-redux";
 import { setSwitchValue } from "../../redux/slices/dataSlice";
+import { menuSearch } from "../../redux/actions/menuAction";
 
 const Header = () => {
   const [isOpenNotification, setIsOpenNotification] = useState(false);
+  const [search, setSearch] = useState("");
+
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const { switchValue } = useSelector((state) => state.data);
@@ -24,6 +27,12 @@ const Header = () => {
 
   const openNotification = () => {
     setIsOpenNotification(!isOpenNotification);
+  };
+
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setSearch(query);
+    dispatch(menuSearch(query));
   };
 
   return (
@@ -64,7 +73,12 @@ const Header = () => {
         {pathname === "/menu" ? (
           <label className={classnames(styles.input)} htmlFor="">
             <img src={icons.search_icon} alt="" />
-            <input type="text" placeholder="Поиск" />
+            <input
+              type="text"
+              placeholder="Поиск"
+              value={search}
+              onChange={handleSearch}
+            />
           </label>
         ) : null}
         <button

@@ -4,12 +4,13 @@ import { useDispatch } from "react-redux";
 import { hideModal, showModal } from "../../../redux/slices/modalSlice";
 import styles from "./AboutItemModal.module.css";
 
-const AboutItemModal = () => {
+const AboutItemModal = ({ product, handleModalClose }) => {
   const dispatch = useDispatch();
 
-  const handleModalClose = () => {
-    dispatch(hideModal());
-  };
+  // const handleModalClose = () => {
+  //   dispatch(hideModal());
+  //   console.log("Modal close clicked");
+  // };
 
   const showAdditivesModal = () => {
     dispatch(showModal({ modalType: "AdditivesModal" }));
@@ -21,7 +22,7 @@ const AboutItemModal = () => {
         <div className={styles.modal__wrapper}>
           <div className={styles.modal__content}>
             <div className={styles.modal__header}>
-              <h3>Чизкейк</h3>
+              <h3>{product.name}</h3>
               <img
                 src={icons.close_icon}
                 alt="Close"
@@ -29,12 +30,12 @@ const AboutItemModal = () => {
               />
             </div>
             <div className={styles.about_wrapper}>
-              <img src={images.cheesecake} alt="Cheesecake" />
-              <p>
-                Чизкейк - сладкий десерт, состоящий из одного или нескольких
-                слоев.
-              </p>
-              {/* <p>{product.description}</p> */}
+              <img
+                src={product.url}
+                alt="Cheesecake"
+                className={styles.product_img}
+              />
+              <p>{product.description}</p>
             </div>
 
             <div className={styles.ingredients_wrapper}>

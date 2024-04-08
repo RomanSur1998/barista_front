@@ -3,9 +3,9 @@ import {
   getCategories,
   getProductsInMenu,
   menuSearch,
-} from "../actions/categoryAction";
+} from "../actions/menuAction";
 
-const categorySlice = createSlice({
+const menuSlice = createSlice({
   name: "category",
   initialState: {
     categories: ["...Loading"],
@@ -13,10 +13,14 @@ const categorySlice = createSlice({
     loading: false,
     error: null,
     selectedCategory: null,
+    searchResults: [],
   },
   reducers: {
     setSelectedCategory(state, action) {
       state.selectedCategory = action.payload;
+    },
+    setSearchResults(state, action) {
+      state.searchResults = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -48,10 +52,22 @@ const categorySlice = createSlice({
         state.loading = false;
         state.error = true;
       });
-    builder.addCase(menuSearch.pending);
+    builder
+      .addCase(menuSearch.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(menuSearch.fulfilled, (state, action) => {
+        state.loading = false;
+        state.searchResults = action.payload.data;
+      })
+      .addCase(menuSearch.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      });
   },
 });
 
-export const { setSelectedCategory } = categorySlice.actions;
+export const { setSelectedCategory } = menuSlice.actions;
 
-export default categorySlice.reducer;
+export default menuSlice.reducer;
