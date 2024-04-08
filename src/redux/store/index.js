@@ -2,7 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import modalSlice from "../slices/modalSlice";
 import authSlice from "../slices/authSlice";
 import dataSlice from "../slices/dataSlice";
-import categorySlice from "../slices/categorySlice";
+import menuSlice from "../slices/menuSlice";
+// import categorySlice from "../slices/categorySlice";
 import ordersSlice from "../slices/ordersSlice";
 
 export const store = configureStore({
@@ -10,8 +11,8 @@ export const store = configureStore({
     modal: modalSlice,
     auth: authSlice,
     data: dataSlice,
-    category: categorySlice,
+    // category: categorySlice,
     orders: ordersSlice,
-    menu: categorySlice,
+    menu: menuSlice,
   },
 });
