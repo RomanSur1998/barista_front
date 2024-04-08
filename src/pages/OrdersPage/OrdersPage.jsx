@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import OrderCard from "../../components/OrderCard/OrderCard";
 import OrderStatusItems from "../../components/OrderStatusItems/OrderStatusItems";
@@ -9,23 +9,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOrders } from "../../redux/actions/ordersAction";
 
 const OrdersPage = () => {
-  const [selectedOrderType, setSelectedOrderType] = useState("takeaway");
   const dispatch = useDispatch();
-  const { statusValue, isHere, filialID, pageNumber } = useSelector(
+  const { statusValue, isHere, pageNumber } = useSelector(
     (state) => state.orders
   );
-  const handleOrderTypeSelection = (ordertype) => {
-    setSelectedOrderType(ordertype);
-  };
 
   useEffect(() => {
-    dispatch(getOrders(statusValue));
+    dispatch(
+      getOrders({
+        statusValue: statusValue,
+        pageNumber: pageNumber,
+        isHere: isHere,
+      })
+    );
   }, [statusValue, isHere, pageNumber]);
 
   return (
     <MainLayout>
       <div className={classnames(styles.order_container)}>
-        <OrderStatusItems selectedOrderType={selectedOrderType} />
+        <OrderStatusItems />
         <div className={classnames(styles.card_container)}>
           <OrderCard />
           <OrderCard />

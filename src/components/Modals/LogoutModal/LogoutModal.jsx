@@ -1,14 +1,30 @@
-import React from "react";
 import classnames from "classnames";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { hideModal } from "../../../redux/slices/modalSlice";
 import { icons } from "../../../assets";
 import styles from "./LogoutModal.module.css";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { deleteOrders } from "../../../redux/actions/ordersAction";
 
 const LogoutModal = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { modalProps } = useSelector((state) => state.modal);
+  console.log(modalProps);
 
   const handleModalClose = () => {
+    dispatch(hideModal());
+  };
+
+  const cancelOrders = () => {
+    dispatch(deleteOrders(modalProps.id));
+  };
+
+  const handleLogout = () => {
+    Cookies.set("accessToken", "");
+    Cookies.set("refreshToken", "");
+    navigate("/");
     dispatch(hideModal());
   };
 
@@ -26,12 +42,16 @@ const LogoutModal = () => {
                 onClick={handleModalClose}
               />
             </div>
-            <p> Вы действительно хотите выйти из учетной записи?</p>
+            {modalProps?.name ? (
+              <p> Вы действительно хотите отменить заказ {modalProps?.name}</p>
+            ) : (
+              <p> Вы действительно хотите выйти из учетной записи?</p>
+            )}
 
             <div className={styles.modal__btns}>
               <button
                 className={classnames(styles.modal__btn, styles.modal__yes)}
-                // onClick={handleLogout}
+                onClick={modalProps?.id ? cancelOrders : handleLogout}
               >
                 Да
               </button>

@@ -31,6 +31,7 @@
   flex-direction: column;
   gap: 8px;
   margin-top: 16px;
+  cursor: pointer;
 }
 .item {
   list-style: none;

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 import Cookies from "js-cookie";
 import { configAxios } from "../config";
 
@@ -46,10 +47,10 @@ export const api = {
     }
   },
 
-  getOrders: async (statusValue) => {
+  getOrders: async (statusValue, pageNumber, isHere) => {
     try {
       const response = await configAxios.get(
-        `https://neo-cafe.up.railway.app/api/v1/order/barmen-orders?filialId=1&status=${statusValue}&here=false&number=1&size=5`
+        `https://neo-cafe.up.railway.app/api/v1/order/barmen-orders?filialId=1&status=${statusValue}&here=${isHere}&number=${pageNumber}&size=5`
       );
       console.log(response, "AUTH");
       return response;
@@ -65,6 +66,16 @@ export const api = {
       return response;
     } catch (error) {
       console.log(error);
+      throw error;
+    }
+  },
+  deleteOrder: async (id) => {
+    try {
+      const response = await configAxios.put(
+        `/api/v1/order/order-close-staff/${id}`
+      );
+      return response;
+    } catch (error) {
       throw error;
     }
   },

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./OrderCard.module.css";
 import { icons } from "../../assets";
 import classnames from "classnames";
@@ -24,7 +23,16 @@ const OrderCard = () => {
   const dispatch = useDispatch();
   const { statusValue } = useSelector((state) => state.orders);
   const handleCancelOrder = () => {
-    dispatch(showModal({ modalType: "LogoutModal" }));
+    dispatch(
+      showModal({
+        modalType: "LogoutModal",
+        modalProps: { id: 1, name: "M-47" },
+      })
+    );
+  };
+
+  const handleShowSidebar = () => {
+    dispatch(showModal({ modalType: "RightSideBar", data: 12 }));
   };
   return (
     <div className={classnames(styles.container)}>
@@ -38,7 +46,10 @@ const OrderCard = () => {
         </button>
       </div>
       <p className={classnames(styles.name)}>Name</p>
-      <ul className={classnames(styles.flex, styles.item_container)}>
+      <ul
+        className={classnames(styles.flex, styles.item_container)}
+        onClick={handleShowSidebar}
+      >
         <li className={classnames(styles.item)}>1x Капучино</li>
         <li className={classnames(styles.item)}>1x Капучино</li>
         <li className={classnames(styles.item)}>1x Капучино</li>

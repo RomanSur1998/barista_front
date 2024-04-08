@@ -24,7 +24,7 @@ export const ordersSlice = createSlice({
       state.pageNumber = action.payload;
     },
   },
-  extraReducers: (builder) => {},
+  // extraReducers: (builder) => {},
 });
 
 export const { setStatusValue, setPageNumber, setIsHere } = ordersSlice.actions;

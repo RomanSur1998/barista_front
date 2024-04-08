@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { BASE_ROUT_COLLECTION, PRIVATE_ROUT_COLLECTION } from "./routes";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ const MainRoutes = () => {
   useEffect(() => {
     const accessToken = Cookies.get("accessToken");
     dispatch(setAccessToken(accessToken));
-  }, []);
+  }, [accessToken]);
   return (
     <Routes>
       {BASE_ROUT_COLLECTION.map((elem) => {
