@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Header.module.css";
 import classnames from "classnames";
-import { useLocation, useSubmit } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { icons } from "../../assets";
 import { headersName } from "../../helpers/HeadersName";
 import Notifications from "../Notifications/Notifications";
@@ -53,7 +53,12 @@ const Header = () => {
               className={classnames(styles.orderplace_btn, styles.inplace_btn, {
                 [styles.selectedOrderType]: selectedOrderType === "inplace",
               })}
-              onClick={() => handleOrderTypeSelection("inplace")}
+              onClick={() =>
+                handleOrderTypeSelection(
+                  "inplace",
+                  pathname == "/orders" ? "На вынос" : "Профиль"
+                )
+              }
             >
               {pathname == "/orders" ? "В заведении" : "График работы"}
             </button>

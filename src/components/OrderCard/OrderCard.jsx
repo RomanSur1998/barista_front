@@ -46,14 +46,16 @@ const OrderCard = () => {
         </button>
       </div>
       <p className={classnames(styles.name)}>Name</p>
-      <ul
-        className={classnames(styles.flex, styles.item_container)}
-        onClick={handleShowSidebar}
-      >
+      <ul className={classnames(styles.flex, styles.item_container)}>
         <li className={classnames(styles.item)}>1x Капучино</li>
         <li className={classnames(styles.item)}>1x Капучино</li>
         <li className={classnames(styles.item)}>1x Капучино</li>
-        <li className={classnames(styles.item, styles.color)}>Еще +2</li>
+        <li
+          className={classnames(styles.item, styles.color)}
+          onClick={handleShowSidebar}
+        >
+          Еще +2
+        </li>
       </ul>
       <button
         className={classnames(styles.button, {

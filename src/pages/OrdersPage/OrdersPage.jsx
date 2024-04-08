@@ -10,19 +10,19 @@ import { getOrders } from "../../redux/actions/ordersAction";
 
 const OrdersPage = () => {
   const dispatch = useDispatch();
-  const { statusValue, isHere, pageNumber } = useSelector(
-    (state) => state.orders
-  );
+  const { statusValue, pageNumber } = useSelector((state) => state.orders);
+
+  const { switchValue } = useSelector((state) => state.data);
 
   useEffect(() => {
     dispatch(
       getOrders({
         statusValue: statusValue,
         pageNumber: pageNumber,
-        isHere: isHere,
+        isHere: switchValue !== "На вынос" ? true : false,
       })
     );
-  }, [statusValue, isHere, pageNumber]);
+  }, [statusValue, switchValue, pageNumber]);
 
   return (
     <MainLayout>
