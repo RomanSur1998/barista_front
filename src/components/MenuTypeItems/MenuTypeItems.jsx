@@ -9,7 +9,7 @@ import classnames from "classnames";
 const MenuTypeItems = ({ handleCategoryChoose }) => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.menu.categories);
-  const [clickedCategory, setClickedCategory] = useState("");
+  const [clickedCategory, setClickedCategory] = useState("кофе");
 
   useEffect(() => {
     dispatch(getCategories());
