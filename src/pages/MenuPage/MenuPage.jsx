@@ -11,14 +11,22 @@ import styles from "./MenuPage.module.css";
 import {
   getCategories,
   getProductsInMenu,
+  menuSearch,
 } from "../../redux/actions/menuAction";
-import { setSelectedCategory } from "../../redux/slices/menuSlice";
+import {
+  setSelectedCategory,
+  setSearchResults,
+} from "../../redux/slices/menuSlice";
 
 const MenuPage = () => {
   const dispatch = useDispatch();
   const [selectedProduct, setSelectedProduct] = useState(null);
   // const selectedCategory = useSelector((state) => state.data);
   const products = useSelector((state) => state.menu.products.responses);
+
+  const searchResults = useSelector(
+    (state) => state.menu.searchResults.responses
+  );
 
   const handleShowSidebar = () => {
     dispatch(showModal({ modalType: "RightSideBar" }));
@@ -46,6 +54,7 @@ const MenuPage = () => {
   const handleCategoryChoose = (category) => {
     dispatch(setSelectedCategory(category));
     dispatch(getProductsInMenu(category));
+    // dispatch(setSearchResults([]));
   };
 
   return (
@@ -53,7 +62,10 @@ const MenuPage = () => {
       <section className={classnames(styles.container)}>
         <MenuTypeItems handleCategoryChoose={handleCategoryChoose} />
         <div className={classnames(styles.menuItem_container)}>
+          {/* {searchResults.length > 0 && <MenuCard products={searchResults} />} */}
+          {/* {searchResults.length === 0 && ( */}
           <MenuCard products={products} handleShowModal={handleShowModal} />
+          {/* )} */}
         </div>
         {selectedProduct && <AboutItemModal product={selectedProduct} />}
 

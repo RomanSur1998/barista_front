@@ -59,7 +59,7 @@ const menuSlice = createSlice({
       })
       .addCase(menuSearch.fulfilled, (state, action) => {
         state.loading = false;
-        state.searchResults = action.payload.data;
+        state.products = action.payload.data;
       })
       .addCase(menuSearch.rejected, (state) => {
         state.loading = false;
@@ -68,6 +68,6 @@ const menuSlice = createSlice({
   },
 });
 
-export const { setSelectedCategory } = menuSlice.actions;
+export const { setSelectedCategory, setSearchResults } = menuSlice.actions;
 
 export default menuSlice.reducer;
