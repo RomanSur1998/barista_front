@@ -1,7 +1,7 @@
 .modal,
 .modal__overlay {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   top: 0;
   left: 0;
   right: 0;
@@ -54,11 +54,11 @@
   font-size: 18px;
 }
 
-.ingredients_wrapper {
+/* .ingredients_wrapper {
   margin-top: 32px;
-}
+} */
 
-.ingredients_wrapper h4 {
+/* .ingredients_wrapper h4 {
   font-weight: 700;
   font-size: 22px;
   margin-bottom: 8px;
@@ -68,7 +68,7 @@
   font-weight: 400;
   font-size: 20px;
   margin-left: 32px;
-}
+} */
 
 .modal__btn {
   width: 544px;
@@ -80,7 +80,7 @@
   border-radius: 14px;
   border: none;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 180px;
 }
 
 .product_img {

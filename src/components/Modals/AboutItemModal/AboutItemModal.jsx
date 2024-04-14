@@ -38,14 +38,14 @@ const AboutItemModal = ({ product, handleModalClose }) => {
               <p>{product.description}</p>
             </div>
 
-            <div className={styles.ingredients_wrapper}>
+            {/* <div className={styles.ingredients_wrapper}>
               <h4>Основные ингредиенты</h4>
               <ul>
                 <li>печенье (песочное) – 300 гр;</li>
                 <li>сливочное масло – 100 гр;</li>
                 <li>мускатный орех</li>
               </ul>
-            </div>
+            </div> */}
 
             <button className={styles.modal__btn} onClick={showAdditivesModal}>
               Добавить

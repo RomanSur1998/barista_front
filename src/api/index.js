@@ -116,3 +116,16 @@ export const searchMenu = async (data) => {
     throw error;
   }
 };
+
+export const makeOrder = async (tableId, data) => {
+  try {
+    const response = await configAxios.post(
+      `/api/v1/order/waiter-make-order?tableId=${tableId}`,
+      data
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
