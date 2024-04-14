@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import classnames from "classnames";
 import MenuCard from "../../components/MenuCard/MenuCard";
-import { images } from "../../assets";
+
 import AboutItemModal from "../../components/Modals/AboutItemModal/AboutItemModal";
 import MenuTypeItems from "../../components/MenuTypeItems/MenuTypeItems";
 import { showModal } from "../../redux/slices/modalSlice";
@@ -11,12 +11,8 @@ import styles from "./MenuPage.module.css";
 import {
   getCategories,
   getProductsInMenu,
-  menuSearch,
 } from "../../redux/actions/menuAction";
-import {
-  setSelectedCategory,
-  setSearchResults,
-} from "../../redux/slices/menuSlice";
+import { setSelectedCategory } from "../../redux/slices/menuSlice";
 
 const MenuPage = () => {
   const dispatch = useDispatch();

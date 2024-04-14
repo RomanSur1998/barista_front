@@ -27,3 +27,29 @@ export const deleteOrders = createAsyncThunk(
     }
   }
 );
+
+export const confirmOrders = createAsyncThunk(
+  "orders/confirmOrders",
+  async (id) => {
+    try {
+      const response = await api.confirmOrders(id);
+      return response;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+);
+
+export const closeOrders = createAsyncThunk(
+  "orders/closeOrders",
+  async (id) => {
+    try {
+      const response = await api.closeOrders(id);
+      return response;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+);

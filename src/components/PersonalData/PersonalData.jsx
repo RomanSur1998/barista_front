@@ -1,8 +1,12 @@
-import React from "react";
 import styles from "./PersonalData.module.css";
 import classnames from "classnames";
 
 const PersonalData = ({ data }) => {
+  function changeFormat() {
+    return data?.birthday?.split("-").reverse().join("-");
+  }
+  console.log(changeFormat());
+
   return (
     <div className={classnames(styles.container)}>
       <h2>Личные данные</h2>
@@ -21,7 +25,7 @@ const PersonalData = ({ data }) => {
         </li>
         <li className={classnames(styles.item)}>
           <span className={classnames(styles.span)}>Дата рождения</span>
-          <p className={classnames(styles.text_block)}>{data?.birthday}</p>
+          <p className={classnames(styles.text_block)}>{changeFormat()}</p>
         </li>
       </ul>
     </div>
