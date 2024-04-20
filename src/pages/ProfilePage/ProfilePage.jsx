@@ -16,6 +16,7 @@ const ProfilePage = () => {
   useEffect(() => {
     dispatch(getProfile());
   }, []);
+  
   return (
     <MainLayout>
       <>

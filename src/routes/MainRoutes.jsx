@@ -13,7 +13,7 @@ const MainRoutes = () => {
   useEffect(() => {
     const accessToken = Cookies.get("accessToken");
     dispatch(setAccessToken(accessToken));
-  }, [accessToken]);
+  }, []);
   return (
     <Routes>
       {BASE_ROUT_COLLECTION.map((elem) => {

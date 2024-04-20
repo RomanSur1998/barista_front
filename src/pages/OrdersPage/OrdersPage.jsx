@@ -104,7 +104,6 @@ const data = [
 const OrdersPage = () => {
   const dispatch = useDispatch();
   const { statusValue, pageNumber } = useSelector((state) => state.orders);
-
   const { switchValue } = useSelector((state) => state.data);
 
   useEffect(() => {

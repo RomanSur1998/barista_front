@@ -102,6 +102,15 @@ export const api = {
       throw error;
     }
   },
+
+  getNotification: async () => {
+    try {
+      const response = await configAxios.get("/api/v1/notifications");
+      return response;
+    } catch (error) {
+      throw Error;
+    }
+  },
 };
 
 export const getAllCategories = async (data) => {

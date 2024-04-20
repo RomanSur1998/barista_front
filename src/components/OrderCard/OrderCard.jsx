@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { showModal } from "../../redux/slices/modalSlice";
 import { closeOrders, confirmOrders } from "../../redux/actions/ordersAction";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const btnTypes = {
   Готово: styles.done,
@@ -25,6 +25,15 @@ const OrderCard = ({ elem }) => {
   const [color, setColor] = useState(false);
   const dispatch = useDispatch();
   const { statusValue } = useSelector((state) => state.orders);
+  const { modalProps } = useSelector((state) => state.modal);
+
+  useEffect(() => {
+    if (modalProps?.table === elem?.table) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  }, [modalProps]);
 
   const handleCancelOrder = () => {
     setColor(!color);
@@ -46,7 +55,12 @@ const OrderCard = ({ elem }) => {
 
   const handleShowSidebar = () => {
     setColor(!color);
-    dispatch(showModal({ modalType: "RightSideBar", modalProps: elem }));
+    dispatch(
+      showModal({
+        modalType: "RightSideBar",
+        modalProps: elem,
+      })
+    );
   };
 
   return (
