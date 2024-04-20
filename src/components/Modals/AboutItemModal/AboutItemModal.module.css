@@ -82,3 +82,9 @@
   cursor: pointer;
   margin-top: 40px;
 }
+
+.product_img {
+  width: 165px;
+  height: 165px;
+  border-radius: 10px;
+}

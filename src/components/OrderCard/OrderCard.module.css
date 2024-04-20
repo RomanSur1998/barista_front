@@ -5,6 +5,11 @@
   padding: 16px;
   border-radius: 12px;
 }
+
+.fill {
+  background-color: #5b7e9a;
+}
+
 .flex {
   display: flex;
 }
@@ -31,6 +36,7 @@
   flex-direction: column;
   gap: 8px;
   margin-top: 16px;
+  cursor: pointer;
 }
 .item {
   list-style: none;
@@ -80,3 +86,11 @@
   font-size: 20px;
   font-weight: 600;
 }
+.white {
+  color: #fff;
+}
+.fill_btn {
+  color: #fff;
+  background-color: #f47356;
+}
+  

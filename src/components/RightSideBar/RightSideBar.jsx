@@ -1,13 +1,17 @@
+/* eslint-disable react/jsx-key */
 import React, { useState } from "react";
 import { icons, images } from "../../assets";
 import { hideModal } from "../../redux/slices/modalSlice";
 import styles from "./RightSideBar.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BasketCard from "../BasketCard/BasketCard";
 
 const RightSideBar = () => {
   //   const [openSideBar, setOpenSideBar] = useState(true);
   const [count, setCount] = useState(1);
+
+  const { modalProps } = useSelector((state) => state.modal);
+  console.log(modalProps, "mod");
 
   const dispatch = useDispatch();
 
@@ -46,25 +50,31 @@ const RightSideBar = () => {
             onClick={closeSidebar}
           />
         </div>
-        <div className={styles.sidebar__content}>
-          <div className={styles.orderdetails_wrapper}>
-            <p className={styles.sidebar__text}>Вы еще ничего не добавили</p>
-            <img src={images.add_item} alt="Вы ничего не доавили" />
+        {modalProps.data ? (
+          <div className={styles.sidebar__card}>
+            {modalProps?.data.map((elem) => {
+              return <BasketCard name={elem?.name} />;
+            })}
+            <button className={styles.footer__btn_fill}>Добавить</button>
           </div>
-
-          {/* <button className={styles.orderadd_btn}>Добавить</button> */}
-
-          <div className={styles.sidebar__footer}>
-            <div className={styles.footer_price}>
-              <p className={styles.footer__title}>Итого</p>
-              <p>0 сом</p>
+        ) : (
+          <div className={styles.sidebar__content}>
+            <div className={styles.orderdetails_wrapper}>
+              <p className={styles.sidebar__text}>Вы еще ничего не добавили</p>
+              <img src={images.add_item} alt="Вы ничего не доавили" />
             </div>
 
-            <button className={styles.footer__btn}>Закрыть счет</button>
+            <div className={styles.sidebar__footer}>
+              <div className={styles.footer_price}>
+                <p className={styles.footer__title}>Итого</p>
+                <p>0 сом</p>
+              </div>
+
+              <button className={styles.footer__btn}>Закрыть счет</button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      {/* )} */}
     </>
   );
 };

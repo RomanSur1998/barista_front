@@ -1,8 +1,8 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import styles from "./BasketCard.module.css";
 import classnames from "classnames";
 
-const BasketCard = () => {
+const BasketCard = ({ name }) => {
   return (
     <div className={classnames(styles.container)}>
       <img
@@ -12,7 +12,7 @@ const BasketCard = () => {
       />
       <div className={classnames(styles.info_block)}>
         <div className={classnames(styles.description)}>
-          <h3>Латте</h3>
+          <h3>{name}</h3>
           <p>Коровеье молоко</p>
           <p>Коровеье молоко</p>
         </div>

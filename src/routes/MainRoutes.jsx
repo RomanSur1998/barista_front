@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { BASE_ROUT_COLLECTION, PRIVATE_ROUT_COLLECTION } from "./routes";
 import { useDispatch, useSelector } from "react-redux";

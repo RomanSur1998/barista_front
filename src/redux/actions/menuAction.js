@@ -26,9 +26,9 @@ export const getProductsInMenu = createAsyncThunk(
   }
 );
 
-export const menuSearch = createAsyncThunk("searchMenu", async (data) => {
+export const menuSearch = createAsyncThunk("searchMenu", async (query) => {
   try {
-    const response = await searchMenu(data);
+    const response = await searchMenu(query);
     return response;
   } catch (error) {
     throw error;

@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Header.module.css";
 import classnames from "classnames";
-import { useLocation, useSubmit } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { icons } from "../../assets";
 import { headersName } from "../../helpers/HeadersName";
 import Notifications from "../Notifications/Notifications";
 import { useDispatch, useSelector } from "react-redux";
 import { setSwitchValue } from "../../redux/slices/dataSlice";
+import { menuSearch } from "../../redux/actions/menuAction";
 
 const Header = () => {
   const [isOpenNotification, setIsOpenNotification] = useState(false);
+  const [search, setSearch] = useState("");
+
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const { switchValue } = useSelector((state) => state.data);
@@ -24,6 +27,12 @@ const Header = () => {
 
   const openNotification = () => {
     setIsOpenNotification(!isOpenNotification);
+  };
+
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setSearch(query);
+    dispatch(menuSearch(query));
   };
 
   return (
@@ -53,7 +62,12 @@ const Header = () => {
               className={classnames(styles.orderplace_btn, styles.inplace_btn, {
                 [styles.selectedOrderType]: selectedOrderType === "inplace",
               })}
-              onClick={() => handleOrderTypeSelection("inplace")}
+              onClick={() =>
+                handleOrderTypeSelection(
+                  "inplace",
+                  pathname == "/orders" ? "На вынос" : "Профиль"
+                )
+              }
             >
               {pathname == "/orders" ? "В заведении" : "График работы"}
             </button>
@@ -64,7 +78,12 @@ const Header = () => {
         {pathname === "/menu" ? (
           <label className={classnames(styles.input)} htmlFor="">
             <img src={icons.search_icon} alt="" />
-            <input type="text" placeholder="Поиск" />
+            <input
+              type="text"
+              placeholder="Поиск"
+              value={search}
+              onChange={handleSearch}
+            />
           </label>
         ) : null}
         <button

@@ -9,6 +9,7 @@ export const authBarmen = createAsyncThunk(
       return response;
     } catch (error) {
       console.log(error, "error in auth");
+      // eslint-disable-next-line no-undef
       return rejectWithValue(error);
     }
   }
@@ -21,6 +22,7 @@ export const codeConfirm = createAsyncThunk(
       return response;
     } catch (error) {
       console.log(error, "error in code");
+      // eslint-disable-next-line no-undef
       return rejectWithValue(error);
     }
   }

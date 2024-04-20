@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { icons } from "../../assets";
 import styles from "./MenuTypeItems.module.css";
-import { getCategories } from "../../redux/actions/categoryAction";
-import { setSelectedCategory } from "../../redux/slices/categorySlice";
+import { getCategories } from "../../redux/actions/menuAction";
 import classnames from "classnames";
 
 const MenuTypeItems = ({ handleCategoryChoose }) => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.menu.categories);
-  const [clickedCategory, setClickedCategory] = useState("");
+  const [clickedCategory, setClickedCategory] = useState("кофе");
 
   useEffect(() => {
     dispatch(getCategories());

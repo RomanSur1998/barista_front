@@ -1,21 +1,26 @@
-import React, { useState } from "react";
 import classNames from "classnames";
 import styles from "./OrderStatusItems.module.css";
-import { statusList } from "../../helpers/StatusList";
+import { statusList, statusListHere } from "../../helpers/StatusList";
 import { useDispatch, useSelector } from "react-redux";
 import { setStatusValue } from "../../redux/slices/ordersSlice";
 
-const OrderStatusItems = ({ selectedOrderType }) => {
+const OrderStatusItems = () => {
   const dispatch = useDispatch();
   const { statusValue } = useSelector((state) => state.orders);
+
+  const { switchValue } = useSelector((state) => state.data);
+
+  console.log(switchValue, "PATH NAME");
 
   const handleSetStatus = (value) => {
     dispatch(setStatusValue(value));
   };
+  const newStatusValue =
+    switchValue !== "На вынос" ? statusList : statusListHere;
 
   return (
     <div className={styles.orderstatus_wrapper}>
-      {statusList.map((status) => {
+      {newStatusValue?.map((status) => {
         return (
           <button
             key={status.name}

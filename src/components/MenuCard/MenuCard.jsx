@@ -3,6 +3,7 @@ import { images } from "../../assets/";
 import classNames from "classnames";
 import { showModal } from "../../redux/slices/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
+import AboutItemModal from "../Modals/AboutItemModal/AboutItemModal";
 import styles from "./MenuCard.module.css";
 
 const MenuCard = ({ products }) => {
@@ -11,9 +12,19 @@ const MenuCard = ({ products }) => {
   const [quantity, setQuantity] = useState(1);
   const [contentVisible, setContentVisible] = useState(true);
 
-  const handleShowModal = () => {
-    dispatch(showModal({ modalType: "AboutItemModal" }));
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleShowModal = (product) => {
+    setSelectedProduct(product);
   };
+
+  const handleModalClose = () => {
+    setSelectedProduct(null);
+  };
+
+  // const handleShowModal = () => {
+  //   dispatch(showModal({ modalType: "AboutItemModal" }));
+  // };
 
   const handleBtnClick = () => {
     setShowBtns(true);
@@ -43,7 +54,7 @@ const MenuCard = ({ products }) => {
               !contentVisible && styles.menucardContent_hidden,
             ])}
           >
-            <div onClick={handleShowModal}>
+            <div onClick={() => handleShowModal(product)}>
               <img
                 src={product.url}
                 alt="The menu item"
@@ -53,7 +64,7 @@ const MenuCard = ({ products }) => {
 
             <div className={styles.menucard__info}>
               <div className={styles.menucard__title}>{product.name}</div>
-              <div className={styles.menucard__price}>{product.price}</div>
+              <div className={styles.menucard__price}>{product.price} c</div>
             </div>
 
             <button onClick={handleBtnClick} className={styles.menucard__btn}>
@@ -77,6 +88,12 @@ const MenuCard = ({ products }) => {
           )}
         </div>
       ))}
+      {selectedProduct && (
+        <AboutItemModal
+          product={selectedProduct}
+          handleModalClose={handleModalClose}
+        />
+      )}
     </>
   );
 };

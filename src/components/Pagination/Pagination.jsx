@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./Pagination.module.css";
 import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";

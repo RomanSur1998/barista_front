@@ -5,3 +5,9 @@ export const statusList = [
   { name: "Отменено", style: "status_cancelled" },
   { name: "Завершено", style: "status_done" },
 ];
+export const statusListHere = [
+  { name: "Новый", style: "status_new" },
+  { name: "В процессе", style: "status_inprocess" },
+  { name: "Отменено", style: "status_cancelled" },
+  { name: "Завершено", style: "status_done" },
+];

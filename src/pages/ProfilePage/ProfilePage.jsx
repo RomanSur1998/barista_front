@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import PersonalData from "../../components/PersonalData/PersonalData";
 import { ScheduleData } from "../../components/ScheduleData/ScheduleData";
@@ -16,6 +16,7 @@ const ProfilePage = () => {
   useEffect(() => {
     dispatch(getProfile());
   }, []);
+  
   return (
     <MainLayout>
       <>
